@@ -1,0 +1,182 @@
+<app-header [backgroundImage]="'assets/nyungwe-np-Copy-scaled.jpg'">
+  <h1 class="text-4xl font-bold tracking-wider text-white sm:sm:text-4xl">
+    Discover Authentic Africa with Gilead Summit Holidays
+  </h1>
+  <p
+    class="mt-6 sm:text-xl text-base font-light leading-8 tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    Our innovative tour and travel packages offer an unforgettable and
+    fulfilling experience with carefully designed itineraries and a
+    customer-centric approach. We provide affordable prices to explore the
+    world’s best destinations and create lasting memories. Join the revolution
+    of travel with us and book your trip today for an extraordinary journey
+  </p>
+  <div class="mt-10 flex items-center justify-center gap-x-6">
+    <a
+      href="#"
+      class="bg-gilead-primary px-8 py-4 uppercase font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      >start your journey</a
+    >
+  </div>
+</app-header>
+<!-- WHY TRAVEL WITH GILDEAD -->
+<section class="bg-zinc-800 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Travel responsibly
+    </h1>
+    <h1
+      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Welcome to Gilead summit holidays
+    </h1>
+    <p
+      class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+    >
+      Your gateway to the breathtaking wilderness of Uganda and Rwanda. We are a
+      committed tour company that offers affordable luxury services to clients
+      who want to explore East Africa’s natural beauty and rich cultural
+      heritage.
+    </p>
+    <p
+      class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+    >
+      We offer a wide variety of safari packages to cater to every taste and
+      budget. Whether you’re in search of an adventure-packed journey through
+      the wilderness or a relaxing getaway with your significant other, we have
+      something for everyone. Our specialized packages include gorilla tracking
+      safaris, birding safaris, adventure safaris, honeymoon packages, fly-in
+      safaris, and custom-made safaris. With our diverse range of options, you
+      can find the perfect safari experience that suits your needs.
+    </p>
+    <a
+      href="/about-us"
+      type="button"
+      class="px-6 py-3 mt-5 font-medium rounded-sm text-xl self-center text-gilead-primary bg-transparent border border-gilead-primary hover:bg-gilead-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300"
+    >
+      About US
+    </a>
+  </div>
+
+  <div class="flex gap-5 items-center justify-center">
+    <strong class="text-white text-xl leading-9">CUSTOMER REVIEWS</strong>
+  </div>
+  <!-- REVIEW SECTION -->
+  <div
+    class="grid sm:grid-cols-3 grid-cols-2 gap-5 text-center justify-items-center"
+  >
+    <div class="flex flex-col gap-2 items-center">
+      <img
+        src="/assets/Tripadvisor-logo.svg"
+        alt=""
+        class="invert brightness-0 w-52"
+      />
+      <div class="space-x-1">
+        <i
+          class="bi bi-star-fill text-gilead-primary"
+          *ngFor="let rating of [1, 2, 3, 4, 5]"
+        ></i>
+      </div>
+
+      <p
+        class="text-gray-400 decoration-gilead-primary underline underline-offset-4 text-xl leading-9 max-w-[17rem]"
+      >
+        162 Review
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 items-center">
+      <img
+        src="/assets/Trustpilot-logo.svg"
+        alt=""
+        class="invert brightness-0 w-52"
+      />
+      <div class="space-x-1">
+        <i
+          class="bi bi-star-fill text-gilead-primary"
+          *ngFor="let rating of [1, 2, 3, 4, 5]"
+        ></i>
+      </div>
+
+      <p
+        class="text-gray-400 decoration-gilead-primary underline underline-offset-4 text-xl leading-9 max-w-[17rem]"
+      >
+        162 Review
+      </p>
+    </div>
+    <div class="flex flex-col gap-2 items-center">
+      <img
+        src="/assets/Feefo-logo.svg"
+        alt=""
+        class="invert brightness-0 w-52"
+      />
+      <div class="space-x-1">
+        <i
+          class="bi bi-star-fill text-gilead-primary"
+          *ngFor="let rating of [1, 2, 3, 4, 5]"
+        ></i>
+      </div>
+
+      <p
+        class="text-gray-400 decoration-gilead-primary underline underline-offset-4 text-xl leading-9 max-w-[17rem]"
+      >
+        162 Review
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ICONIC DESTINATIONS -->
+<section class="mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Discover Africa with us
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Explore Our Affordable Luxury Holiday safaris
+    </h1>
+    <div class="flex items-center justify-center">
+      <div class="bg-gilead-primary h-1 w-36"></div>
+    </div>
+  </div>
+
+  <!-- LOGO SECTION -->
+  <div class="mt-6">
+    <div class="sm:flex hidden justify-between px-8 capitalize">
+      <p class="sm:text-xl text-xs font-light leading-8 text-gray-500">
+        Explore our most popular destinations
+      </p>
+      <a
+        routerLink="/destinations"
+        class="cursor-pointer font-semibold sm:text-xl text-xs leading-8 text-gilead-primary underline underline-offset-8 hover:text-orange-500"
+      >
+        View all destinations
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-3 grid-cols-2 px-3">
+      <ng-container *ngFor="let destination of Destination">
+        <app-single-destination
+          [destinationId]="destination.id"
+          [destinationUrl]="destination.slug"
+          [destinationName]="destination.name"
+          [destinationImage]="destination.image"
+        ></app-single-destination>
+      </ng-container>
+    </div>
+    <div class="sm:hidden flex justify-center px-8 capitalize">
+      <a
+        routerLink="/destinations"
+        class="cursor-pointer font-semibold sm:text-xl text-xs leading-8 text-gilead-primary underline underline-offset-8 hover:text-orange-500"
+      >
+        View all destinations
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<div class="p-5">
+  <a class="relative shadow-lg" [routerLink]="['/destination', destinationUrl]">
+    <figure>
+      <div class="rounded-md relative">
+        <img
+          [src]="destinationImage"
+          [alt]="destinationImage"
+          class="rounded-md w-full h-full bg-cover object-cover filter transition-all duration-500 contrast-125 hover:opacity-75"
+        />
+        <div
+          class="absolute bottom-0 left-0 right-0 sm:h-[181px] h-[115px] bg-gradient-to-b from-transparent to-black rounded-b-md"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 text-zinc-100 px-4 sm:py-14 py-9 text-center"
+        >
+          <h1
+            class="sm:text-[24px] text-base font-bold uppercase tracking-wider leading-normal"
+          >
+            {{ destinationName }}
+          </h1>
+        </div>
+      </div>
+    </figure>
+  </a>
+</div>

@@ -1,0 +1,85 @@
+<app-header>
+  <h1
+    class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
+  >
+    hello
+  </h1>
+  <h1
+    class="mt-6 font-bold uppercase sm:text-6xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    hello
+  </h1>
+  <div
+    class="flex items-start justify-center sm:mx-auto gap-3 text-start mt-14 text-lg"
+  >
+    <a
+      routerLink="/"
+      class="text-white mb-auto text-base hover:text-gilead-primary"
+      >Home</a
+    >
+    <h1 class="text-gilead-primary mb-auto">></h1>
+
+    <a
+      routerLink="/destination"
+      class="text-white mb-auto hover:text-gilead-primary"
+      >Destinations</a
+    >
+    <h1 class="text-gilead-primary mb-auto">></h1>
+    <h1 class="text-white font-extrabold tracking-widest mb-auto capitalize">
+      <!-- {{ destinationSingle.name | lowercase }} -->
+    </h1>
+  </div>
+</app-header>
+<section class="grid w-screen">
+  <div
+    class="w-full bg-[url('assets/nyungwe-np-Copy-scaled.jpg')] bg-cover bg-blend-soft-light"
+  >
+    <!-- Top Menu Section -->
+    <!-- <app-top-menu></app-top-menu> -->
+    <div>
+      <!-- Main Menu -->
+      <!-- <app-main-menu class="absolute bg-zinc-700"></app-main-menu> -->
+      <!-- CTA section -->
+    </div>
+  </div>
+</section>
+<section class="bg-white mx-auto px-5 py-32 w-screen">
+  <!-- Page Not Found -->
+  <div class="flex items-start justify-start sm:mx-auto gap-2 text-start">
+    <a
+      routerLink="/"
+      class="text-zinc-400 mb-auto text-base hover:text-gilead-primary"
+      >Home</a
+    >
+    <h1 class="text-gilead-primary mb-auto text-base">></h1>
+    <h1 class="text-zinc-800 font-extrabold tracking-widest mb-auto text-base">
+      Page not Found
+    </h1>
+  </div>
+</section>
+<section class="bg-white mx-auto px-5 w-screen">
+  <!-- Page Not Found -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-7 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Sorry about that
+    </h1>
+    <h1
+      class="uppercase text-zinc-700 tracking-widest text-[22px] font-bold sm:text-6xl"
+    >
+      PAGE NOT FOUND
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-600 max-w-8xl text-center">
+      The page you were looking for has either moved or been removed
+    </p>
+    <button
+      (click)="goHome()"
+      type="button"
+      class="text-gray-50 hidden sm:block font-bold uppercase bg-gilead-primary hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-blue-300 px-10 py-2 text-center mr-3 md:mr-0"
+    >
+      <i class="bi bi-house-door-fill text-xl"></i>
+      <strong> Home</strong>
+    </button>
+  </div>
+</section>

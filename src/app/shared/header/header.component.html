@@ -1,0 +1,20 @@
+<section class="grid w-screen">
+  <div
+    [style.background-image]="'url(' + backgroundImage + ')'"
+    class="w-full bg-cover bg-blend-soft-light bg-fixed"
+  >
+    <!-- Top Menu Section -->
+    <app-top-menu></app-top-menu>
+    <div class="relative z-10">
+      <div
+        class="absolute top-0 left-0 right-0 sm:h-96 h-[38rem] bg-gradient-to-t from-transparent to-black rounded-b-md"
+      ></div>
+      <!-- Main Menu -->
+      <app-main-menu class="absolute z-20"></app-main-menu>
+      <!-- CTA section -->
+      <app-call-to-action>
+        <ng-content></ng-content>
+      </app-call-to-action>
+    </div>
+  </div>
+</section>
