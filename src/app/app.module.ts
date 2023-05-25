@@ -9,6 +9,7 @@ import { DestinationModule } from './destination/destination.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { EnquireModule } from './enquire/enquire.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
@@ -19,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
     ButtonModule,
     DestinationModule,
     SharedModule,
+    EnquireModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

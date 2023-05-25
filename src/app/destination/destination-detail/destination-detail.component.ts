@@ -12,7 +12,15 @@ export class DestinationDetailComponent {
   destinationSlug: any;
   destinationSingle: any;
   destinationSingleCountry: any;
-  destinationHiglights: any;
+  destination: any;
+  animals: any;
+  months: any;
+  highlights: any;
+  location: any;
+  accommodations: any;
+  transport: any;
+
+  MonthMood = ['GOOD', 'BEST', 'MIXED'];
 
   constructor(
     private destinationService: DestinationService,
@@ -31,12 +39,22 @@ export class DestinationDetailComponent {
   getdestination() {
     this.destinationService.getDestination(this.destinationSlug).subscribe({
       next: (destination) => {
-        this.destinationSingle = destination;
-        this.getDestinationCountry(this.destinationSingle.id);
+        this.destination = destination;
+        this.destinationSingle = this.destination.destination;
+        this.animals = this.destination.animals;
+        this.months = this.destination.destinationmonth;
+        console.log(this.destination);
+        this.highlights = this.destination.highlights;
+        this.location = this.destination.location;
+        this.transport = this.destination.transport;
+        this.accommodations = this.destination.accommodations;
+        this.getDestinationCountry(this.destinationSingle.country);
         this.titleService.setTitle(this.destinationSingle.name);
       },
       error: (err) => {
-        console.log(err);
+        if (err.status == 0) {
+          this.router.navigate(['/not-found']);
+        }
       },
     });
   }
@@ -46,16 +64,6 @@ export class DestinationDetailComponent {
       .subscribe({
         next: (country) => {
           this.destinationSingleCountry = country;
-          this.getDestinationHighlights();
-        },
-      });
-  }
-  getDestinationHighlights(id?: any) {
-    this.destinationService
-      .getHighLightsByDestination(this.destinationSingle.id)
-      .subscribe({
-        next: (highlights) => {
-          this.destinationHiglights = highlights;
         },
       });
   }

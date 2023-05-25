@@ -1,0 +1,30 @@
+<div class="p-5">
+  <a
+    class="relative shadow-lg block box-border rounded-md"
+    [routerLink]="['/accommodation', accommodationUrl]"
+  >
+    <figure>
+      <div class="rounded-md relative overflow-hidden">
+        <div class="bg-red-300 max-h-[30rem]">
+          <img
+            [src]="accommodationImage"
+            [alt]="accommodationImage"
+            class="block h-[30rem] w-full rounded-md bg-cover object-cover filter transition-all duration-500 hover:scale-110"
+          />
+        </div>
+        <div
+          class="absolute bottom-0 left-0 right-0 sm:h-[181px] h-[115px] bg-gradient-to-b from-transparent to-black rounded-b-md"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 right-0 text-zinc-100 px-4 sm:py-14 py-9 text-center"
+        >
+          <h1
+            class="sm:text-[24px] text-base font-bold uppercase tracking-wider leading-normal"
+          >
+            {{ accommodationName }}
+          </h1>
+        </div>
+      </div>
+    </figure>
+  </a>
+</div>

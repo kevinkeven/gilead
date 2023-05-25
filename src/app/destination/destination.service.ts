@@ -17,7 +17,10 @@ export class DestinationService {
     return this.http.get(this.destinationApiUrl + 'detail/' + slug);
   }
   getDestinationCountry(id: any) {
-    return this.http.get(this.countryApiUrl + `${id}/`);
+    return this.http.get(this.countryApiUrl + `dest/${id}/`);
+  }
+  getCountry(slug: any) {
+    return this.http.get(this.countryApiUrl + `${slug}/`);
   }
   getHighLightsByDestination(id: any) {
     return this.http.get(

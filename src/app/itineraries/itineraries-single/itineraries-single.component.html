@@ -1,0 +1,68 @@
+<a class="" [routerLink]="['/itineraries/detail/', itinerarySlug]">
+  <div
+    class="max-w-md rounded overflow-hidden shadow transition-all duration-100 hover:shadow-lg"
+  >
+    <div class="relative border-b-4 border-gilead-primary">
+      <img
+        class="w-full hover:scale-105 transition-all duration-500"
+        alt="Itinerary Image"
+        [src]="itineraryImage"
+      />
+      <div class="absolute bottom-0 right-0 flex flex-wrap">
+        <li
+          class="inline-block text-black tracking-wider bg-white px-3 py-1 text-sm font-semibold mr-2 mb-2"
+        >
+          <a [routerLink]="['/', destination.slug]">
+            <i class="bi bi-geo text-gilead-primary"></i>
+            {{ destination.name }}
+          </a>
+        </li>
+      </div>
+    </div>
+    <div class="px-6 py-4">
+      <div class="font-bold sm:text-lg text-sm mb-2 tracking-widest">
+        {{ itineraryTitle }}
+      </div>
+      <p class="text-sm font-light leading-5 text-zinc-400 line-clamp-3">
+        {{ itineraryDescription }}
+      </p>
+      <div class="bg-zinc-200 h-1 mt-5"></div>
+    </div>
+    <div class="px-6 py-4">
+      <ul class="flex flex-col">
+        <li class="flex shrink-0 gap-3 items-center">
+          <i class="bi bi-wallet-fill text-gilead-primary"></i>
+          <strong class="text-sm text-zinc-500 font-normal"
+            >Guide Price
+            <span class="text-zinc-500 font-semibold">{{
+              itineraryPrice
+            }}</span>
+            per person</strong
+          >
+        </li>
+        <!-- number of nights -->
+
+        <li class="flex shrink-0 gap-3 items-center">
+          <i class="bi bi-clock-fill text-gilead-primary"></i>
+          <strong class="text-sm text-zinc-500 font-normal">
+            <span class="text-zinc-500 font-semibold">{{
+              itineraryDuration
+            }}</span>
+            Days</strong
+          >
+        </li>
+        <!-- Departure From -->
+
+        <li
+          class="flex shrink-0 gap-3 items-center text-zinc-500 text-sm font-semibold"
+        >
+          <i
+            class="bi bi-airplane-fill text-gilead-primary text-base rotate-45"
+          ></i>
+
+          {{ itineraryDepartureFrom }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</a>

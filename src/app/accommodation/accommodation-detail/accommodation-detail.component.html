@@ -1,0 +1,289 @@
+<app-header [backgroundImage]="accommodationDetail.image">
+  <h1
+    class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
+  >
+    <!-- {{ destinationSingleCountry.name }} -->
+  </h1>
+  <h1
+    class="mt-6 font-bold uppercase sm:text-5xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    {{ accommodationDetail?.name }}
+  </h1>
+  <ul class="flex justify-center mt-10 sm:text-base text-sm items-baseline">
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/"
+        class="text-white self-baseline mb-auto text-base hover:text-gilead-primary"
+        >Home</a
+      >
+    </li>
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/destination"
+        class="text-white mb-auto hover:text-gilead-primary capitalize"
+        >accommodation</a
+      >
+    </li>
+    <li>
+      <strong class="capitalize text-white">{{
+        accommodationDetail.name | lowercase
+      }}</strong>
+    </li>
+  </ul>
+  <div class="mt-10">
+    <button
+      class="py-3 px-6 border border-gilead-primary text-gilead-primary space-x-2"
+      (click)="displayBasic = true"
+    >
+      <i class="bi bi-camera2 text-xl"></i>
+      <strong class="text-sm self-center">View Gallery </strong>
+    </button>
+    <p-galleria
+      [value]="accommodationimages"
+      [(visible)]="displayBasic"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '50%' }"
+      [numVisible]="5"
+      [circular]="true"
+      [fullScreen]="true"
+      [showItemNavigators]="true"
+    >
+      <ng-template pTemplate="item" let-accommodation>
+        <img [src]="accommodation.image" style="width: 100%; display: block" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-accommodation>
+        <div class="grid grid-nogutter justify-content-center">
+          <img [src]="accommodation.image" style="display: block" />
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+</app-header>
+<!-- Accommodation Detail Section -->
+<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen">
+  <!-- Accommodation Detail -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Discover {{ accommodationDetail.name }}
+    </h1>
+    <p
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      {{ accommodationDetail.description }}
+    </p>
+  </div>
+  <div class="relative w-full aspect-w-16 aspect-h-10 bg-gray-900">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <svg
+        class="w-16 h-16 text-gilead-primary"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path d="M6 4l15 8-15 8V4z" fill="currentColor" />
+      </svg>
+    </div>
+  </div>
+</section>
+<!-- Expert and at glance Section -->
+<section class="bg-zinc-800 mx-auto px-5 py-16 space-y-12 w-screen">
+  <!-- Expert Detail -->
+  <div
+    class="flex sm:flex-row flex-cols items-start justify-between sm:mx-5 gap-5 text-center p-10"
+  >
+    <div class="space-y-5">
+      <h1
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+      >
+        EXPERT VIEW
+      </h1>
+      <ul class="text-start flex flex-col gap-5">
+        <li
+          *ngFor="let expertview of accommodationexpertview"
+          class="flex gap-1"
+        >
+          <i
+            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+          ></i>
+          <strong class="text-zinc-400 font-medium text-lg">{{
+            expertview.name
+          }}</strong>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <div class="space-y-5">
+      <h1
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+      >
+        Iconic traits
+      </h1>
+      <ul class="text-start flex flex-col gap-5">
+        <li *ngFor="let glance of accommodationglance" class="flex gap-1">
+          <i
+            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+          ></i>
+          <strong class="text-zinc-400 font-medium text-lg">{{
+            glance.description
+          }}</strong>
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- Insider tip -->
+<section class="bg-zinc-100 mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <p-fieldset>
+      <ng-template pTemplate="header">
+        <div class="flex gap-2 align-items-center text-primary">
+          <i class="bi bi-lightbulb-fill text-2xl text-gilead-primary"></i>
+          <h1
+            class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl self-center tracking-widest"
+          >
+            Tip
+          </h1>
+        </div>
+      </ng-template>
+      <p
+        class="mt-6 font-lato sm:text-lg text-base font-light leading-8 text-gray-400 max-w-7xl text-center overscroll-auto whitespace-pre-line"
+      >
+        {{ accommodationtips.description }}
+      </p>
+    </p-fieldset>
+  </div>
+</section>
+
+<!-- Activities Section -->
+<section class="bg-zinc-800 mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Enjoy your hobbies.
+    </h1>
+    <h1
+      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      VENTURES
+    </h1>
+    <p
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      Adventures and activities that guarantee the creation of lifelong
+      memories. Choose the activities that most appeal to you, from spectacular
+      thrills to luxurious leisure.
+    </p>
+  </div>
+  <div class="grid sm:grid-cols-4 grid-cols-2 mt-8 gap-5">
+    <div
+      *ngFor="let activity of accommodationDetail.activities"
+      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 border border-gilead-primary rounded-md"
+    >
+      <div
+        class="sm:text-xl text-base font-semibold tracking-widest text-gilead-primary"
+      >
+        {{ activity }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<!-- <section class="bg-zinc-100 mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      You in this scenario
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Photo gallery
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Explore Tengile River Lodge to gain a sense of its own character and
+      elegance, which are intended to charm every visitor.
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center mt-5">
+    <button
+      class="py-3 px-6 border border-gilead-primary text-gilead-primary space-x-2"
+      (click)="displayBasic = true"
+    >
+      <i class="bi bi-eye-fill text-xl"></i>
+      <strong class="self-baseline"> Photos</strong>
+    </button>
+    <p-galleria
+      [value]="accommodationimages"
+      [(visible)]="displayBasic"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '50%' }"
+      [numVisible]="5"
+      [circular]="true"
+      [fullScreen]="true"
+      [showItemNavigators]="true"
+    >
+      <ng-template pTemplate="item" let-accommodation>
+        <img [src]="accommodation.image" style="width: 100%; display: block" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-accommodation>
+        <div class="grid grid-nogutter justify-content-center">
+          <img [src]="accommodation.image" style="display: block" />
+        </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+</section> -->
+
+<!-- Itineraries Section -->
+<section class="bg-white mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Typical Itineraries
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      TRIP INSPIRATION
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Every custom gilead summit holidays tour is exhilarating, with magnificent
+      animals, incredible natural marvels, attractive beaches, and interesting
+      towns. Uncertain about where to go? Experience the excitement with this
+      uplifting collection of favorites, whether it's a must-do excursion, a
+      milestone celebration, or just a much-needed getaway.
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 px-3">
+    <ng-container *ngFor="let itinerary of itineraries">
+      <app-itineraries-single
+        [itinerarySlug]="itinerary.slug"
+        [itineraryImage]="itinerary.image"
+        [itineraryTitle]="itinerary.name"
+        [itineraryDescription]="itinerary.description"
+        [itineraryPrice]="itinerary.price"
+        [itineraryDuration]="itinerary.duration"
+        [itineraryDepartureFrom]="itinerary.departureFrom"
+        [itineraryDestination]="itinerary.country"
+      ></app-itineraries-single>
+    </ng-container>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/itineraries"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all itineraries
+    </a>
+  </div>
+</section>

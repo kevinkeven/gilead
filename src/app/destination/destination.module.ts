@@ -9,6 +9,7 @@ import { SingleDestinationComponent } from './single-destination/single-destinat
 import { DestinationDetailComponent } from './destination-detail/destination-detail.component';
 import { DestinationListComponent } from './destination-list/destination-list.component';
 import { SharedModule } from '../shared/shared.module';
+import { AccommodationModule } from '../accommodation/accommodation.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     DestinationRoutingModule,
     HttpClientModule,
     SharedModule,
+    AccommodationModule,
   ],
   exports: [DestinationComponent, SingleDestinationComponent],
 })

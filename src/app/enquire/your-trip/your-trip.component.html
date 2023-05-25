@@ -1,0 +1,196 @@
+<form [formGroup]="yourTrip" (submit)="YourTripForm()">
+  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+    <!-- When do you want to travel? -->
+    <div class="sm:col-span-2">
+      <label
+        for="travelDate"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >Where would you like to travel to</label
+      >
+      <div
+        class="flex items-center mb-4"
+        *ngFor="let item of country; let i = index"
+      >
+        <p-checkbox
+          formControlName="travel_destination"
+          [value]="item.id"
+          inputId="ny"
+          [label]="item.name"
+        ></p-checkbox>
+      </div>
+      <ng-container
+        *ngIf="travelDestination?.invalid && travelDestination?.touched"
+      >
+        <div
+          class="py-3 text-red-500"
+          *ngIf="travelDestination?.hasError('required')"
+        >
+          <p class="capitalize">Select at least one destination</p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- When do you want to travel? -->
+    <div class="sm:col-span-2">
+      <label
+        for="travel_date"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >When do you want to travel?</label
+      >
+      <input
+        type="date"
+        [ngClass]="{
+          'border-red-500':
+            travel_date?.touched && travel_date?.hasError('required')
+        }"
+        formControlName="travel_date"
+        name="travel_date"
+        id="travel_date"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        required=""
+      />
+      <ng-container *ngIf="travel_date?.invalid && travel_date?.touched">
+        <div
+          class="py-3 text-red-500"
+          *ngIf="travel_date?.hasError('required')"
+        >
+          <p class="capitalize">Travel date can't be empty</p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- How long is will your trip be ? -->
+    <div class="w-full">
+      <label
+        for="travel_duration"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >How long will your trip be ?</label
+      >
+      <input
+        [ngClass]="{
+          'border-red-500':
+            travel_duration?.touched && travel_duration?.hasError('required'),
+        }"
+        type="text"
+        name="travel_duration"
+        formControlName="travel_duration"
+        id="travel_duration"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        required=""
+      />
+      <ng-container
+        *ngIf="travel_duration?.invalid && travel_duration?.touched"
+      >
+        <div
+          class="py-3 text-red-500"
+          *ngIf="travel_duration?.hasError('required')"
+        >
+          <p class="capitalize">Trip Duration can't be empty</p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- Travel type ? -->
+    <div class="w-full">
+      <label
+        for="travel_type"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >Travel type ?</label
+      >
+
+      <select
+        [ngClass]="{
+        'border-red-500':
+          travel_type?.touched && travel_type?.hasError('required'),
+      }"
+        id="category"
+        formControlName="travel_type"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+      >
+        <option selected="">Select category</option>
+        <option *ngFor="let type of TravelTypes" [value]="type.value">
+          {{ type.label }}
+        </option>
+      </select>
+      <ng-container *ngIf="travel_type?.invalid && travel_type?.touched">
+        <div
+          class="py-3 text-red-500"
+          *ngIf="travel_type?.hasError('required')"
+        >
+          <p class="capitalize">Trip Type can't be empty</p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- How many people are traveling ? -->
+    <div class="sm:col-span-2">
+      <label
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+      >
+        How many people are traveling ?
+      </label>
+    </div>
+    <!-- Adults (+18) ? -->
+    <div class="w-full">
+      <label for="adults" class="block mb-2 text-sm font-medium text-gray-900"
+        >Adults (+18) ?</label
+      >
+      <select
+        formControlName="adults"
+        id="adults"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+      >
+        <option selected="">1</option>
+        <option *ngFor="let type of [2, 3, 4, 5, 6, 7, 8, 9]">
+          {{ type }}
+        </option>
+        <option>10 +</option>
+      </select>
+    </div>
+    <!-- Children ? -->
+    <div class="w-full">
+      <label
+        for="description"
+        class="block mb-2 text-sm font-medium text-gray-900"
+        >Children ?</label
+      >
+      <select
+        id="category"
+        formControlName="children"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+      >
+        <option selected="">0</option>
+        <option *ngFor="let type of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+          {{ type }}
+        </option>
+        <option>10 +</option>
+      </select>
+    </div>
+    <!-- Special Requests ? -->
+    <div class="sm:col-span-2">
+      <label
+        for="travelDate"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >Special Requests ?</label
+      >
+      <textarea
+        id="description"
+        rows="8"
+        formControlName="special_request"
+        class="block p-2.5 w-full placeholder:uppercase text-sm text-gray-900 bg-zinc-100 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+        placeholder="tell us if you have specific plans"
+      ></textarea>
+    </div>
+  </div>
+  <!-- Divider  -->
+  <div class="mt-6 py-5">
+    <div class="bg-zinc-200 h-1"></div>
+  </div>
+
+  <!-- next step Button -->
+  <div class="mt-6 flex items-center justify-end gap-x-6">
+    <button
+      [disabled]="yourTrip.invalid"
+      type="submit"
+      class="py-3 px-6 uppercase disabled:cursor-not-allowed disabled:bg-orange-200 space-x-2 bg-gilead-primary text-white transition-colors duration-300 ease-in-out"
+    >
+      Next Step
+    </button>
+  </div>
+</form>

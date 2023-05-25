@@ -1,0 +1,293 @@
+<app-header [backgroundImage]="country.image">
+  <h1
+    class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
+  >
+    {{ country.name }}
+  </h1>
+  <h1
+    class="mt-6 font-bold uppercase sm:text-5xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    {{ country?.name }}
+  </h1>
+  <ul class="flex justify-center mt-10 sm:text-base text-sm items-baseline">
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/"
+        class="text-white self-baseline mb-auto text-base hover:text-gilead-primary"
+        >Home</a
+      >
+    </li>
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/destination"
+        class="text-white mb-auto hover:text-gilead-primary capitalize"
+        >accommodation</a
+      >
+    </li>
+    <li>
+      <strong class="capitalize text-white">{{
+        country?.name | lowercase
+      }}</strong>
+    </li>
+  </ul>
+</app-header>
+
+<!-- Country Detail Section -->
+<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen">
+  <!-- Country Detail -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Explore {{ country.name }}
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      {{ country.title }}
+    </h1>
+    <p
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      {{ country.description }}
+    </p>
+  </div>
+</section>
+
+<!-- Famousfor and homeof Section -->
+<section class="bg-zinc-800 mx-auto px-5 py-16 space-y-12 w-screen">
+  <!-- Famousfor and homeof Detail -->
+  <div
+    class="flex sm:flex-row flex-cols items-start justify-between sm:mx-5 gap-5 text-center p-10"
+  >
+    <div class="space-y-5">
+      <h1
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+      >
+        Famous of
+      </h1>
+      <ul class="text-start flex flex-col gap-5">
+        <li *ngFor="let destinationHiglight of famousof" class="flex gap-1">
+          <i
+            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+          ></i>
+          <strong class="text-zinc-400 font-medium text-lg">{{
+            destinationHiglight.title
+          }}</strong>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <div class="space-y-5">
+      <h1
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+      >
+        Home Of
+      </h1>
+      <ul class="text-start flex flex-col gap-5">
+        <li *ngFor="let destinationHighlight of homeof" class="flex gap-1">
+          <i
+            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+          ></i>
+          <strong class="text-zinc-400 font-medium text-lg">{{
+            destinationHighlight.title
+          }}</strong>
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery section -->
+<section class="bg-white mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      You in this scenario
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      {{ country.name }} gallery
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      The ideal setting for your trip to {{ country.name }} includes
+      breathtaking landscapes and animals, a rich cultural history, and
+      recognizable sites.
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center mt-5">
+    <div class="card">
+      <div class="flex"></div>
+      <p-carousel
+        [value]="gallery"
+        [numVisible]="2"
+        [numScroll]="1"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-image pTemplate="item">
+          <img [src]="image.image" [alt]="image.caption" class="w-full px-5" />
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
+
+<!-- Itineraries Section -->
+<section class="bg-white mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Typical Itineraries
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      TRIP INSPIRATION
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Every custom gilead summit holidays tour is exhilarating, with magnificent
+      animals, incredible natural marvels, attractive beaches, and interesting
+      towns. Uncertain about where to go? Experience the excitement with this
+      uplifting collection of favorites, whether it's a must-do excursion, a
+      milestone celebration, or just a much-needed getaway.
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 px-3 mt-10">
+    <p-carousel
+      [value]="itineraries"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-itinerary pTemplate="item">
+        <app-itineraries-single
+          class="p-10"
+          [itinerarySlug]="itinerary.slug"
+          [itineraryImage]="itinerary.image"
+          [itineraryTitle]="itinerary.name"
+          [itineraryDescription]="itinerary.description"
+          [itineraryPrice]="itinerary.price"
+          [itineraryDuration]="itinerary.duration"
+          [itineraryDepartureFrom]="itinerary.departureFrom"
+          [itineraryDestination]="itinerary.country"
+        ></app-itineraries-single>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/destinations"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all destinations
+    </a>
+  </div>
+</section>
+
+<!-- DAY BY DAY Section -->
+<section class="bg-zinc-800 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Month-by-month guide
+    </h1>
+    <h1
+      class="uppercase text-zinc-200 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      When To visit
+    </h1>
+    <div class="flex items-center justify-center">
+      <div class="bg-gilead-primary h-1 w-36"></div>
+    </div>
+  </div>
+
+  <!-- itinerary SECTION -->
+  <ul class="flex justify-center sm:text-base text-sm items-baseline gap-5">
+    <li
+      [ngClass]="{
+        'border-green-300': month.when_to_visit === 'BEST',
+        'border-gilead-primary': month.when_to_visit === 'GOOD',
+        'border-zinc-600': month.when_to_visit === 'MIXED'
+      }"
+      class="border-b-4 border-gilead-primary p-2 h-14 w-14 flex items-center justify-center"
+      *ngFor="let month of countryMonth"
+    >
+      <a
+        routerLink="/"
+        class="text-zinc-200 text-sm tracking-widest font-semibold uppercase"
+        >{{ month.month }}</a
+      >
+    </li>
+  </ul>
+  <ul class="flex justify-center sm:text-base text-sm items-baseline gap-5">
+    <li
+      class="flex items-center justify-center"
+      *ngFor="let monthName of MonthMood"
+    >
+      <i
+        [ngClass]="{
+          'text-green-300': monthName === 'BEST',
+          'text-gilead-primary': monthName === 'GOOD',
+          'text-zinc-600': monthName === 'MIXED'
+        }"
+        class="bi bi-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+      ></i>
+      <a
+        routerLink="/"
+        class="text-zinc-200 text-sm tracking-wide font-semibold uppercase"
+        >{{ monthName }}</a
+      >
+    </li>
+  </ul>
+</section>
+
+<!-- Itineraries Section -->
+<section class="bg-white mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Where To Stay In {{ country?.name }}
+    </h1>
+
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Not all {{ country?.name }} properties are created equal! Our Travel
+      Experts have slept in these beds and are thus well equipped to match your
+      individual needs and requirements!
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 px-3 mt-10">
+    <p-carousel
+      [value]="destinations"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-destination pTemplate="item">
+        <app-single-destination
+          [destinationId]="destination.id"
+          [destinationUrl]="destination.slug"
+          [destinationName]="destination.name"
+          [destinationImage]="destination.image"
+        ></app-single-destination>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/destinations"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all destinations
+    </a>
+  </div>
+</section>

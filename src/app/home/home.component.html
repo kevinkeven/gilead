@@ -148,19 +148,7 @@
 
   <!-- LOGO SECTION -->
   <div class="mt-6">
-    <div class="sm:flex hidden justify-between px-8 capitalize">
-      <p class="sm:text-xl text-xs font-light leading-8 text-gray-500">
-        Explore our most popular destinations
-      </p>
-      <a
-        routerLink="/destinations"
-        class="cursor-pointer font-semibold sm:text-xl text-xs leading-8 text-gilead-primary underline underline-offset-8 hover:text-orange-500"
-      >
-        View all destinations
-      </a>
-    </div>
-
-    <div class="grid sm:grid-cols-3 grid-cols-2 px-3">
+    <div class="grid sm:grid-cols-3 grid-cols-1 px-3">
       <ng-container *ngFor="let destination of Destination">
         <app-single-destination
           [destinationId]="destination.id"
@@ -170,10 +158,10 @@
         ></app-single-destination>
       </ng-container>
     </div>
-    <div class="sm:hidden flex justify-center px-8 capitalize">
+    <div class="flex justify-center px-8 capitalize">
       <a
         routerLink="/destinations"
-        class="cursor-pointer font-semibold sm:text-xl text-xs leading-8 text-gilead-primary underline underline-offset-8 hover:text-orange-500"
+        class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
       >
         View all destinations
       </a>

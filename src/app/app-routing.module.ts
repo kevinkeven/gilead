@@ -27,6 +27,18 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'enquire',
+    loadChildren: () =>
+      import('./enquire/enquire.module').then((m) => m.EnquireModule),
+  },
+  {
+    path: 'itineraries',
+    loadChildren: () =>
+      import('./itineraries/itineraries.module').then(
+        (m) => m.ItinerariesModule
+      ),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
     title: 'Page Not Found | Gilead Summit Holidays',

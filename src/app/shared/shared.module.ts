@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +10,6 @@ import { CallToActionComponent } from './call-to-action/call-to-action.component
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ButtomFooterComponent } from './footer/buttom-footer/buttom-footer.component';
-HeaderComponent;
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ HeaderComponent;
     FooterComponent,
     ButtomFooterComponent,
   ],
-  imports: [CommonModule, SharedRoutingModule],
+  imports: [CommonModule, SharedRoutingModule, HttpClientModule],
   exports: [HeaderComponent, FooterComponent],
 })
 export class SharedModule {}

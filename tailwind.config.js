@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         yellowtail: ["Yellowtail", "cursive"],
         kaushan: ["Kaushan Script", "cursive"],
+        lato: ["Lato", "sans-serif"],
       },
     },
   },

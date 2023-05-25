@@ -1,0 +1,183 @@
+<form [formGroup]="yourDetail" (submit)="YourDetailForm()">
+  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+    <!-- Email -->
+    <div class="sm:col-span-2">
+      <label
+        for="email"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >Email Address</label
+      >
+      <input
+        [ngClass]="{
+          'border-red-500':
+            (email?.touched && email?.hasError('required')) ||
+            email?.hasError('email')
+        }"
+        type="email"
+        name="email"
+        id="email"
+        formControlName="email"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        required=""
+      />
+      <ng-container *ngIf="email?.invalid && email?.touched">
+        <div class="py-3 text-red-500 tracking-wide">
+          <p class="capitalize" *ngIf="email?.hasError('required')">
+            email field can't be empty
+          </p>
+          <p class="capitalize" *ngIf="email?.hasError('email')">
+            Email not valid
+          </p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- first_name ? -->
+    <div class="w-full">
+      <label
+        for="firt_name"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >First Name ?</label
+      >
+      <input
+        type="text"
+        name="first_name"
+        id="first_name"
+        formControlName="first_name"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        [ngClass]="{
+          'border-red-500':
+            (first_name?.touched && first_name?.hasError('required')) ||
+            first_name?.hasError('minlength')
+        }"
+        required=""
+      />
+      <ng-container *ngIf="first_name?.invalid && first_name?.touched">
+        <div class="py-3 text-red-500 tracking-wide">
+          <p class="capitalize" *ngIf="first_name?.hasError('required')">
+            First name field can't be empty
+          </p>
+          <p class="capitalize" *ngIf="first_name?.hasError('min')">
+            First name can't be less than 4 characters
+          </p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- last_name ? -->
+    <div class="w-full">
+      <label
+        for="last_name"
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >last name ?</label
+      >
+      <input
+        type="text"
+        name="last_name"
+        id="last_name"
+        formControlName="last_name"
+        [ngClass]="{
+          'border-red-500':
+            last_name?.touched && last_name?.hasError('required')
+        }"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        required=""
+      />
+      <ng-container *ngIf="last_name?.invalid && last_name?.touched">
+        <div class="py-3 text-red-500 tracking-wide">
+          <p class="capitalize" *ngIf="last_name?.hasError('required')">
+            last name field can't be empty
+          </p>
+          <p class="capitalize" *ngIf="last_name?.hasError('min')">
+            last name can't be less than 4 characters
+          </p>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- phone_number ? -->
+
+    <div class="sm:col-span-2">
+      <label
+        for="phone_number "
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >phone number ?</label
+      >
+      <input
+        type="text"
+        name="phone_number"
+        id="phone_number"
+        formControlName="phone_number"
+        [ngClass]="{
+          'border-red-500':
+            (phone_number?.touched && phone_number?.hasError('required')) ||
+            phone_number?.hasError('pattern')
+        }"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        step="1"
+        required=""
+      />
+      <ng-container *ngIf="phone_number?.invalid && phone_number?.touched">
+        <div class="py-3 text-red-500 tracking-wide">
+          <p class="capitalize" *ngIf="phone_number?.hasError('required')">
+            phone number field can't be empty
+          </p>
+          <p class="capitalize" *ngIf="phone_number?.hasError('pattern')">
+            Invalid Phone Number format.
+          </p>
+        </div>
+      </ng-container>
+    </div>
+    <!-- Country -->
+    <div class="sm:col-span-2">
+      <label
+        for="country "
+        class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+        >Country ?</label
+      >
+      <input
+        type="text"
+        name="country"
+        id="country"
+        formControlName="country"
+        [ngClass]="{
+          'border-red-500': country?.touched && country?.hasError('required')
+        }"
+        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        required=""
+      />
+      <ng-container *ngIf="country?.invalid && country?.touched">
+        <div class="py-3 text-red-500 tracking-wide">
+          <p class="capitalize" *ngIf="country?.hasError('required')">
+            country field can't be empty
+          </p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- Divider  -->
+  <div class="mt-6 py-5">
+    <div class="bg-zinc-200 h-1"></div>
+  </div>
+
+  <!-- next step Button -->
+  <div class="mt-6 flex items-center justify-end gap-x-6">
+    <button
+      class="py-2 px-6 capitalize border bg-zinc-200 text-gilead-primary space-x-5 hover:bg-zinc-400 hover:text-white transition-colors duration-300 ease-in-out"
+    >
+      <i class="bi bi-arrow-left-circle-fill"></i>
+      Go back
+    </button>
+
+    <button
+      [disabled]="yourDetail.invalid"
+      type="submit"
+      class="py-3 px-6 uppercase disabled:cursor-not-allowed disabled:bg-orange-200 space-x-2 bg-gilead-primary text-white transition-colors duration-300 ease-in-out"
+    >
+      <i
+        *ngIf="loading"
+        class="pi pi-spin pi-spinner text-white"
+        style="font-size: 1rem"
+      ></i>
+      <strong *ngIf="!loading">Next Step</strong>
+    </button>
+  </div>
+</form>

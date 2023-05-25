@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class PageNotFoundComponent {
   constructor(private router: Router) {}
+
+  NotFound = 'assets/nyungwe-np-Copy-scaled.jpg';
   goHome() {
     this.router.navigate(['/']);
   }

@@ -1,0 +1,74 @@
+<section class="bg-zinc-800 mx-auto p-5 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div class="flex items-start justify-between sm:mx-auto gap-5">
+    <a href="/" class="flex items-center">
+      <img
+        src="/assets/gilead_black.svg"
+        class="h-12 mr-3"
+        alt="Gilead Summit Holidays Logo"
+        class="w-36"
+      />
+    </a>
+    <div class="flex gap-x-5 self-center">
+      <a href="" class="text-zinc-300 capitalize tracking-wider text-base">
+        <i class="bi bi-caret-left-fill clear-left text-gilead-primary"></i>
+        back to Gilead summit holidays</a
+      >
+      <button (click)="showDialog()" class="text-gilead-primary">
+        <i class="bi bi-info-circle-fill"></i>
+        Need help ?
+      </button>
+      <p-dialog
+        [(visible)]="visible"
+        [modal]="true"
+        [style]="{ width: '50vw' }"
+        [draggable]="false"
+        [resizable]="false"
+      >
+        <h1
+          class="uppercase text-zinc-800 tracking-widest text-base font-bold sm:text-xl"
+        >
+          CONTACT US SO WE CAN ASSIST YOU ON YOUR JOURNEY
+        </h1>
+        <p class="font-lato text-lg mt-5">Call us on +256 772 072 909</p>
+        <a
+          href="tel:+256772072909"
+          type="button"
+          class="mt-5 text-center font-medium text-xl text-gilead-primary bg-transparent hover:underline uppercase"
+        >
+          Call us
+        </a>
+      </p-dialog>
+    </div>
+  </div>
+</section>
+<!-- WHY TRAVEL WITH GILDEAD -->
+<section class="bg-zinc-100 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Life's Great Journeys
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      SEND YOUR ENQUIRY
+    </h1>
+    <p
+      class="text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+    >
+      Your tailor-made African journey awaits. Tell us your outline travel plans
+      and one of our experts will be in touch within one working day.
+    </p>
+  </div>
+  <div class="flex flex-col items-center justify-center sm:mx-auto gap-5">
+    <div class="w-1/2">
+      <p-steps [model]="items" [readonly]="true"></p-steps>
+    </div>
+    <div class="bg-white p-20 w-8/12 rounded-lg border shadow-sm">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>
