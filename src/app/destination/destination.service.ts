@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -16,12 +18,7 @@ export class DestinationService {
   getDestination(slug: any) {
     return this.http.get(this.destinationApiUrl + 'detail/' + slug);
   }
-  getDestinationCountry(id: any) {
-    return this.http.get(this.countryApiUrl + `dest/${id}/`);
-  }
-  getCountry(slug: any) {
-    return this.http.get(this.countryApiUrl + `${slug}/`);
-  }
+
   getHighLightsByDestination(id: any) {
     return this.http.get(
       this.destinationApiUrl + `highlights/destination/${id}`

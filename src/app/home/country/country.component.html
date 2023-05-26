@@ -182,10 +182,10 @@
   </div>
   <div class="flex justify-center px-8 capitalize">
     <a
-      routerLink="/destinations"
+      routerLink="/itineraries"
       class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
     >
-      View all destinations
+      View all Itineraries
     </a>
   </div>
 </section>
@@ -210,7 +210,7 @@
   </div>
 
   <!-- itinerary SECTION -->
-  <ul class="flex justify-center sm:text-base text-sm items-baseline gap-5">
+  <ul class="flex justify-center sm:text-8xl text-sm items-baseline gap-5">
     <li
       [ngClass]="{
         'border-green-300': month.when_to_visit === 'BEST',
@@ -249,7 +249,7 @@
   </ul>
 </section>
 
-<!-- Itineraries Section -->
+<!-- Accommodation Section -->
 <section class="bg-white mx-auto px-5 py-20 w-screen">
   <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
@@ -291,3 +291,46 @@
     </a>
   </div>
 </section>
+
+<!-- How To book Section -->
+<!-- <section class="bg-white mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Where To Stay In {{ country?.name }}
+    </h1>
+
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Not all {{ country?.name }} properties are created equal! Our Travel
+      Experts have slept in these beds and are thus well equipped to match your
+      individual needs and requirements!
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 px-3 mt-10">
+    <p-carousel
+      [value]="destinations"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-destination pTemplate="item">
+        <app-single-destination
+          [destinationId]="destination.id"
+          [destinationUrl]="destination.slug"
+          [destinationName]="destination.name"
+          [destinationImage]="destination.image"
+        ></app-single-destination>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/destinations"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all destinations
+    </a>
+  </div>
+</section> -->

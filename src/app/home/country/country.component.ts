@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DestinationService } from 'src/app/destination/destination.service';
+import { SharedService } from 'src/app/shared/shared.service';
+SharedService
 
 @Component({
   selector: 'app-country',
@@ -9,7 +10,7 @@ import { DestinationService } from 'src/app/destination/destination.service';
 })
 export class CountryComponent {
   constructor(
-    private destinationService: DestinationService,
+    private sharedService: SharedService,
     private route: ActivatedRoute
   ) {}
 
@@ -29,7 +30,7 @@ export class CountryComponent {
   ngOnInit(): void {
     this.countrySlug = this.route.snapshot.paramMap.get('slug');
 
-    this.destinationService.getCountry(this.countrySlug).subscribe({
+    this.sharedService.getCountry(this.countrySlug).subscribe({
       next: (data) => {
         this.countryDetail = data;
         this.country = this.countryDetail.country;

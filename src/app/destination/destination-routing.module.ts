@@ -5,13 +5,13 @@ import { DestinationDetailComponent } from './destination-detail/destination-det
 import { DestinationListComponent } from './destination-list/destination-list.component';
 
 const routes: Routes = [
-  { path: '', component: DestinationComponent },
   { path: 'destination/:slug', component: DestinationDetailComponent },
   {
     path: 'destinations',
     component: DestinationListComponent,
     title: 'Destinations',
   },
+  { path: '', component: DestinationComponent },
 ];
 
 @NgModule({

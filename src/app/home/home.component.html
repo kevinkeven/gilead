@@ -1,16 +1,7 @@
 <app-header [backgroundImage]="'assets/nyungwe-np-Copy-scaled.jpg'">
-  <h1 class="text-4xl font-bold tracking-wider text-white sm:sm:text-4xl">
+  <h1 class="text-4xl font-bold tracking-wider text-white sm:sm:text-6xl">
     Discover Authentic Africa with Gilead Summit Holidays
   </h1>
-  <p
-    class="mt-6 sm:text-xl text-base font-light leading-8 tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
-  >
-    Our innovative tour and travel packages offer an unforgettable and
-    fulfilling experience with carefully designed itineraries and a
-    customer-centric approach. We provide affordable prices to explore the
-    world’s best destinations and create lasting memories. Join the revolution
-    of travel with us and book your trip today for an extraordinary journey
-  </p>
   <div class="mt-10 flex items-center justify-center gap-x-6">
     <a
       href="#"
@@ -166,5 +157,50 @@
         View all destinations
       </a>
     </div>
+  </div>
+</section>
+<!-- Itineraries Section -->
+<section class="bg-white mx-auto px-5 py-20 space-y-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Typical Itineraries
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      TRIP INSPIRATION
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Every custom gilead summit holidays tour is exhilarating, with magnificent
+      animals, incredible natural marvels, attractive beaches, and interesting
+      towns. Uncertain about where to go? Experience the excitement with this
+      uplifting collection of favorites, whether it's a must-do excursion, a
+      milestone celebration, or just a much-needed getaway.
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 first:ml-20 mt-20">
+    <ng-container *ngFor="let itinerary of itinerariese">
+      <app-itineraries-single
+        [itinerarySlug]="itinerary.slug"
+        [itineraryImage]="itinerary.image"
+        [itineraryTitle]="itinerary.name"
+        [itineraryDescription]="itinerary.description"
+        [itineraryPrice]="itinerary.price"
+        [itineraryDuration]="itinerary.duration"
+        [itineraryDepartureFrom]="itinerary.departureFrom"
+        [itineraryDestination]="itinerary.country"
+      ></app-itineraries-single>
+    </ng-container>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/itineraries"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all itineraries
+    </a>
   </div>
 </section>

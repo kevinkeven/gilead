@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { DestinationService } from '../destination.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { SharedService } from 'src/app/shared/shared.service';
+
 
 @Component({
   selector: 'app-destination-detail',
@@ -25,6 +27,7 @@ export class DestinationDetailComponent {
   constructor(
     private destinationService: DestinationService,
     private route: ActivatedRoute,
+    private sharedService: SharedService,
     private router: Router,
     private titleService: Title
   ) {}
@@ -59,7 +62,7 @@ export class DestinationDetailComponent {
     });
   }
   getDestinationCountry(id: any) {
-    this.destinationService
+    this.sharedService
       .getDestinationCountry(this.destinationSingle.country)
       .subscribe({
         next: (country) => {

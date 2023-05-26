@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DestinationService } from 'src/app/destination/destination.service';
+import { SharedService } from 'src/app/shared/shared.service';
+SharedService
 
 @Component({
   selector: 'app-itineraries-single',
@@ -7,7 +9,7 @@ import { DestinationService } from 'src/app/destination/destination.service';
   styleUrls: ['./itineraries-single.component.css'],
 })
 export class ItinerariesSingleComponent {
-  constructor(private destinationService: DestinationService) {}
+  constructor(private sharedService: SharedService) {}
 
   @Input() itinerarySlug: any;
   @Input() itineraryTitle: any;
@@ -21,7 +23,7 @@ export class ItinerariesSingleComponent {
   destination: any;
 
   ngOnInit(): void {
-    this.destinationService
+    this.sharedService
       .getDestinationCountry(this.itineraryDestination)
       .subscribe({
         next: (destination) => {

@@ -4,8 +4,8 @@ import { AccommodationComponent } from './accommodation.component';
 import { AccommodationDetailComponent } from './accommodation-detail/accommodation-detail.component';
 
 const routes: Routes = [
-  { path: '', component: AccommodationComponent },
   { path: 'accommodation/:slug', component: AccommodationDetailComponent },
+  { path: '', component: AccommodationComponent },
 ];
 
 @NgModule({

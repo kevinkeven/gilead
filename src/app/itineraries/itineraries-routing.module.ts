@@ -4,14 +4,9 @@ import { ItinerariesComponent } from './itineraries.component';
 import { ItinerariesDetailComponent } from './itineraries-detail/itineraries-detail.component';
 
 const routes: Routes = [
-  {
-    path: '',
-
-    children: [
-      { path: '', component: ItinerariesComponent },
-      { path: 'detail/:slug', component: ItinerariesDetailComponent },
-    ],
-  },
+  { path: 'list', component: ItinerariesComponent },
+  { path: 'detail/:slug', component: ItinerariesDetailComponent },
+  { path: '', component: ItinerariesComponent },
 ];
 
 @NgModule({

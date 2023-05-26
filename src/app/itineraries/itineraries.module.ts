@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { CarouselModule } from 'primeng/carousel';
 import { TimelineModule } from 'primeng/timeline';
+import { MegaMenuModule } from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TimelineModule } from 'primeng/timeline';
     SharedModule,
     CarouselModule,
     TimelineModule,
+    MegaMenuModule,
   ],
   exports: [ItinerariesSingleComponent],
 })

@@ -4,16 +4,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-  },
-  {
     path: 'shared',
     loadChildren: () =>
       import('./shared/shared.module').then((m) => m.SharedModule),
   },
   {
-    path: 'destination',
+    path: 'destinations',
     loadChildren: () =>
       import('./destination/destination.module').then(
         (m) => m.DestinationModule
@@ -27,16 +23,20 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'enquire',
-    loadChildren: () =>
-      import('./enquire/enquire.module').then((m) => m.EnquireModule),
-  },
-  {
     path: 'itineraries',
     loadChildren: () =>
       import('./itineraries/itineraries.module').then(
         (m) => m.ItinerariesModule
       ),
+  },
+  {
+    path: 'enquire',
+    loadChildren: () =>
+      import('./enquire/enquire.module').then((m) => m.EnquireModule),
+  },
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
     path: '**',
