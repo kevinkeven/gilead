@@ -1,13 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class ItinerariesService {
-  APIURL = 'http://127.0.0.1:8000/api/';
+  APIURL!: any;
   itinerariesApiUrl = `${this.APIURL}itineraries/`;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.APIURL = environment.APIURL;
+  }
 
   getItineraries() {
     return this.http.get(this.itinerariesApiUrl + 'list/');

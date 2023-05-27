@@ -1,14 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  constructor(private http: HttpClient) {}
+  APIURL!: string
+  constructor(private http: HttpClient) {
+    this.APIURL = environment.APIURL;
+  }
 
-  APIURL = 'http://127.0.0.1:8000/api/';
+
   countryApiUrl = `${this.APIURL}shared/country/`;
 
   Countries() {

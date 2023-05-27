@@ -1,13 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccommodationService {
-  APIURL = 'http://127.0.0.1:8000/api/';
+  APIURL!: string
   AccommodationUrl = `${this.APIURL}accommodation/`;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.APIURL = environment.APIURL;
+  }
 
   getAccommodatin(slug: string) {
     return this.http.get(this.AccommodationUrl + `detail/${slug}/`);

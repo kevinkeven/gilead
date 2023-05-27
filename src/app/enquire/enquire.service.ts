@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EnquireService {
-  constructor(private http: HttpClient) {}
-
-  APIURL = 'http://127.0.0.1:8000/api/';
+  APIURL!: string
+  constructor(private http: HttpClient) {
+    this.APIURL = environment.APIURL;
+    // console.log(this.APIURL);
+  }
   EnquireAPi = `${this.APIURL}enquire/`;
   countryApiUrl = `${this.APIURL}shared/country/`;
   youTripData: any;
