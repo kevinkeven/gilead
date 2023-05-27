@@ -42,6 +42,7 @@ export class HomeComponent {
   ngOnInit() {
     this.destination();
     this.Itineraries();
+    console.log(`this the api url ${environment.APIURL}`)
   }
   destination() {
     this.destinationService.getDestinations().subscribe({
