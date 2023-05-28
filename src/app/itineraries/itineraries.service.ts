@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class ItinerariesService {
-  APIURL!: any;
+  APIURL = environment.APIURL;
   itinerariesApiUrl = `${this.APIURL}itineraries/`;
   constructor(private http: HttpClient) {
     this.APIURL = environment.APIURL;

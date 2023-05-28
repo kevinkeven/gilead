@@ -2,8 +2,6 @@ import { ItinerariesService } from 'src/app/itineraries/itineraries.service';
 import { Component } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 import { DestinationService } from '../destination/destination.service';
-import { environment } from 'src/environments/environment';
-
 
 @Component({
   selector: 'app-home',
@@ -14,9 +12,7 @@ export class HomeComponent {
   constructor(
     private destinationService: DestinationService,
     private itinerariesservice: ItinerariesService
-  ) {
-    console.log(environment.APIURL);
-  }
+  ) {}
   items!: MegaMenuItem[];
   Destination: any;
   itinerariese: any;
@@ -42,7 +38,8 @@ export class HomeComponent {
   ngOnInit() {
     this.destination();
     this.Itineraries();
-    console.log(`this the api url ${environment.APIURL}`)
+    console.log(this.Destination);
+    console.log(this.destinationService.APIURL);
   }
   destination() {
     this.destinationService.getDestinations().subscribe({

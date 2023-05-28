@@ -9,7 +9,7 @@ environment
   providedIn: 'root',
 })
 export class DestinationService {
-  APIURL!: string;
+  APIURL = environment.APIURL;
   destinationApiUrl = `${this.APIURL}destination/`;
   countryApiUrl = `${this.APIURL}shared/country/`;
   constructor(private http: HttpClient) {
