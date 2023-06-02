@@ -7,10 +7,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class SharedService {
-  APIURL!: string
   constructor(private http: HttpClient) {
-    this.APIURL = environment.APIURL;
   }
+  ngOnInit(){}
+  APIURL = environment.APIURL;
 
 
   countryApiUrl = `${this.APIURL}shared/country/`;
@@ -20,6 +20,7 @@ export class SharedService {
   }
 
   getCountry(slug: any) {
+    console.log(this.APIURL);
     return this.http.get(this.countryApiUrl + `${slug}/`);
   }
   getDestinationCountry(id: any) {

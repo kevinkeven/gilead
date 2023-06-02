@@ -6,10 +6,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class EnquireService {
-  APIURL!: string
+  APIURL = environment.APIURL;
   constructor(private http: HttpClient) {
-    this.APIURL = environment.APIURL;
-    // console.log(this.APIURL);
   }
   EnquireAPi = `${this.APIURL}enquire/`;
   countryApiUrl = `${this.APIURL}shared/country/`;

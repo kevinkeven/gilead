@@ -1,5 +1,4 @@
 export const environment = {
   production: true,
-  APIURL: 'https://gileadsuimmit.herokuapp.com/api/',
-
+  APIURL: 'http://gilead-back-end.server.cimuf.com/api/',
 };

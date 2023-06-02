@@ -46,7 +46,7 @@ export class DestinationDetailComponent {
         this.destinationSingle = this.destination.destination;
         this.animals = this.destination.animals;
         this.months = this.destination.destinationmonth;
-        console.log(this.destination);
+        console.log(destination);
         this.highlights = this.destination.highlights;
         this.location = this.destination.location;
         this.transport = this.destination.transport;
@@ -63,11 +63,14 @@ export class DestinationDetailComponent {
   }
   getDestinationCountry(id: any) {
     this.sharedService
-      .getDestinationCountry(this.destinationSingle.country)
+      .getDestinationCountry(id)
       .subscribe({
         next: (country) => {
           this.destinationSingleCountry = country;
         },
+        error: (err) => {
+          console.log(err);
+        }
       });
   }
 }
