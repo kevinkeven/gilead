@@ -14,7 +14,7 @@ WORKDIR /gilead
 RUN npm install
 
 # Generate the build of the application
-RUN npm run build --prod
+RUN ng run build --prod
 
 
 # Stage 2: Serve app with nginx server
@@ -23,7 +23,7 @@ RUN npm run build --prod
 FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
-COPY --from=build gilead/dist/sample-angular-app /usr/share/nginx/html
+COPY --from=build gilead/dist/gilead /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
