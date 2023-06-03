@@ -14,7 +14,7 @@ WORKDIR /gilead
 RUN npm install
 
 # Generate the build of the application
-RUN ng run build --prod
+RUN ng build
 
 
 # Stage 2: Serve app with nginx server
