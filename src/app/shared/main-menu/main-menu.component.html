@@ -45,91 +45,91 @@
       <ul
         class="flex flex-col leading-7 tracking-wider font-bold text-base p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent"
       >
-      <li>
-        <a
-          (click)="ToggleMegamenu = !ToggleMegamenu"
-          class="block cursor-pointer uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
-          aria-current="page"
-          >destinations<i class="pi pi-angle-down"></i
-        ></a>
-        <ng-container>
-          <div
-            [ngClass]="{
-              hidden: !ToggleMegamenu,
-              block: ToggleMegamenu
-            }"
-            id="mega-menu-dropdown"
-            class="absolute z-10 grid grid-cols-3 bg-white w-auto mt-9 text-sm shadow-xl"
-          >
-            <!-- Countries Section -->
+        <li>
+          <a
+            (click)="ToggleMegamenu = !ToggleMegamenu"
+            class="block cursor-pointer uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
+            aria-current="page"
+            >destinations<i class="pi pi-angle-down"></i
+          ></a>
+          <ng-container>
             <div
-              class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white bg-zinc-800"
+              [ngClass]="{
+                hidden: !ToggleMegamenu,
+                block: ToggleMegamenu
+              }"
+              id="mega-menu-dropdown"
+              class="absolute z-10 grid grid-cols-3 bg-white w-auto mt-9 text-sm shadow-xl"
             >
+              <!-- Countries Section -->
               <div
-                class="flex flex-col gap-5"
+                class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white bg-zinc-800"
               >
                 <div
-                  class="p-5 text-gilead-primary underline mx-auto underline-offset-4 uppercase text-xl"
+                  class="flex flex-col gap-5"
                 >
-                  <h1>Top destinations</h1>
-                </div>
-                <div
-                  *ngFor="let country of countries"
-                  class=" w-72 max-w-sm mx-auto bg-transparent flex items-center space-x-4"
-                >
-                <a [routerLink]="['/', country.slug]" class="flex mx-auto  border p-6 border-zinc-700 rounded-md hover:bg-zinc-700">
-                  <div class="space-y-2">
-                    <div
-                      class="text-xl uppercase font-medium text-gilead-primary tracking-widest"
-                    >
-                      {{ country.name }}
-                    </div>
-                    <div class="bg-gilead-primary h-1 w-10"></div>
-                    <p class="text-zin-400 capitalize">
-                      {{ country.slogan }}
-                    </p>
+                  <div
+                    class="p-5 text-gilead-primary underline mx-auto underline-offset-4 uppercase text-xl"
+                  >
+                    <h1>Top destinations</h1>
                   </div>
-                </a>
+                  <div
+                    *ngFor="let country of countries"
+                    class=" w-72 max-w-sm mx-auto bg-transparent flex items-center space-x-4"
+                  >
+                  <a [routerLink]="['/', country.slug]" class="flex mx-auto  border p-6 border-zinc-700 rounded-md hover:bg-zinc-700">
+                    <div class="space-y-2">
+                      <div
+                        class="text-xl uppercase font-medium text-gilead-primary tracking-widest"
+                      >
+                        {{ country.name }}
+                      </div>
+                      <div class="bg-gilead-primary h-1 w-10"></div>
+                      <p class="text-zin-400 capitalize">
+                        {{ country.slogan }}
+                      </p>
+                    </div>
+                  </a>
+
+                  </div>
 
                 </div>
 
               </div>
+              <!-- Destinations Section -->
+              <div class="flex flex-col col-span-2">
+                <a
+                *ngFor="let destination of destinations"
+                [routerLink]="['/destination', destination.slug]"
+                  class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-4"
+                >
 
-            </div>
-            <!-- Destinations Section -->
-            <div class="flex flex-col col-span-2">
-              <a
-              *ngFor="let destination of destinations"
-              [routerLink]="['/destination', destination.slug]"
-                class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-4"
-              >
-
-                <div class="shrink-0">
-                  <img
-                    class="h-24 w-24 object-cover rounded-full border-4 border-gilead-primary"
-                    [src]="destination.image"
-                    alt="ChitChat Logo"
-                  />
-                </div>
-
-                  <div
-                    class="text-lg uppercase font-semibold text-zinc-800 tracking-widest"
-                  >
-                   {{ destination.name }}
+                  <div class="shrink-0">
+                    <img
+                      class="h-24 w-24 object-cover rounded-full border-4 border-gilead-primary"
+                      [src]="destination.image"
+                      alt="ChitChat Logo"
+                    />
                   </div>
 
-              </a>
-            </div>
+                    <div
+                      class="text-lg uppercase font-semibold text-zinc-800 tracking-widest"
+                    >
+                    {{ destination.name }}
+                    </div>
 
-          </div>
-        </ng-container>
-      </li>
+                </a>
+              </div>
+
+            </div>
+          </ng-container>
+        </li>
         <li>
           <a
             href="#"
             class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
             aria-current="page"
-            >experience <i class="pi pi-angle-down"></i
+            >Tours <i class="pi pi-angle-down"></i
           ></a>
         </li>
         <li>
@@ -137,16 +137,17 @@
             href="#"
             class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
             aria-current="page"
-            >inspiration<i class="pi pi-angle-down"></i
-          ></a>
+            >Blog
+          </a>
         </li>
+
         <li>
           <a
-            href="#"
+            routerLink="['/about-us']"
             class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
             aria-current="page"
-            >destinations<i class="pi pi-angle-down"></i
-          ></a>
+            >About Us
+          </a>
         </li>
       </ul>
     </div>
