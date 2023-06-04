@@ -139,19 +139,20 @@
       period of visit
     </h1>
   </div>
-  <ul class="flex justify-center sm:text-base text-sm items-baseline gap-5">
+
+  <ul class="flex justify-center sm:text-8xl text-sm items-baseline gap-5">
     <li
       [ngClass]="{
         'border-green-300': month.when_to_visit === 'BEST',
         'border-gilead-primary': month.when_to_visit === 'GOOD',
         'border-zinc-600': month.when_to_visit === 'MIXED'
       }"
-      class="border-4 bg-white border-gilead-primary p-2 rounded-full h-14 w-14 flex items-center justify-center"
+      class="border-b-4 border-gilead-primary p-2 h-14 w-14 flex items-center justify-center"
       *ngFor="let month of months"
     >
       <a
         routerLink="/"
-        class="text-zinc-600 text-sm tracking-widest font-semibold uppercase"
+        class="text-zinc-900 text-sm tracking-widest font-semibold uppercase"
         >{{ month.month }}</a
       >
     </li>
@@ -171,7 +172,7 @@
       ></i>
       <a
         routerLink="/"
-        class="text-zinc-600 text-sm tracking-wide font-semibold uppercase"
+        class="text-zinc-200 text-sm tracking-wide font-semibold uppercase"
         >{{ monthName }}</a
       >
     </li>

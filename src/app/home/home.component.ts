@@ -38,14 +38,11 @@ export class HomeComponent {
   ngOnInit() {
     this.destination();
     this.Itineraries();
-    console.log(this.Destination);
-    console.log(this.destinationService.APIURL);
   }
   destination() {
     this.destinationService.getDestinations().subscribe({
-      next: (destination) => {
-        this.Destination = destination;
-        console.log(destination);
+      next: (destination: any) => {
+        this.Destination = destination.slice(0,5);
       },
       error: (err) => {
         console.log(err);

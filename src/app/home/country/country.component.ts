@@ -36,8 +36,8 @@ export class CountryComponent {
         this.country = this.countryDetail.country;
         this.famousof = this.countryDetail.countryfamousof;
         this.homeof = this.countryDetail.countryhomeFor;
-        this.destinations = this.countryDetail.destinations;
-        this.itineraries = this.countryDetail.itineraries;
+        this.destinations = this.countryDetail.destinations.slice(0, 9);
+        this.itineraries = this.countryDetail.itineraries.slice(0,9);
         this.gallery = this.countryDetail.galleryImages;
         this.countryMonth = this.countryDetail.countryMonth;
       },
