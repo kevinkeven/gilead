@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CountryComponent } from './country/country.component';
 import { CarouselModule } from 'primeng/carousel';
 import { ItinerariesModule } from '../itineraries/itineraries.module';
+import { BlogModule } from '../blog/blog.module';
 
 @NgModule({
   declarations: [HomeComponent, CountryComponent],
@@ -21,6 +22,7 @@ import { ItinerariesModule } from '../itineraries/itineraries.module';
     SharedModule,
     CarouselModule,
     ItinerariesModule,
+    BlogModule,
   ],
 })
 export class HomeModule {}

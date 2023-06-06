@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 import { environment } from 'src/environments/environment';
-environment
-
 
 @Injectable({
   providedIn: 'root',

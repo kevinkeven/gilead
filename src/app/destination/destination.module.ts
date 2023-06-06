@@ -10,6 +10,10 @@ import { DestinationDetailComponent } from './destination-detail/destination-det
 import { DestinationListComponent } from './destination-list/destination-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { AccommodationModule } from '../accommodation/accommodation.module';
+import { CarouselModule } from 'primeng/carousel';
+import { ItinerariesModule } from '../itineraries/itineraries.module';
+
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,8 @@ import { AccommodationModule } from '../accommodation/accommodation.module';
     DestinationRoutingModule,
     HttpClientModule,
     SharedModule,
+    CarouselModule,
+    ItinerariesModule,
     AccommodationModule,
   ],
   exports: [DestinationComponent, SingleDestinationComponent],

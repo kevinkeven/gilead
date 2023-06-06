@@ -21,8 +21,27 @@ export class DestinationDetailComponent {
   location: any;
   accommodations: any;
   transport: any;
+  itineraries: any
 
   MonthMood = ['GOOD', 'BEST', 'MIXED'];
+
+  responsiveOptions = [
+    {
+      breakpoint: '1199px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '991px',
+      numVisible: 2,
+      numScroll: 1,
+    },
+    {
+      breakpoint: '767px',
+      numVisible: 1,
+      numScroll: 1,
+    },
+  ];
 
   constructor(
     private destinationService: DestinationService,
@@ -37,6 +56,7 @@ export class DestinationDetailComponent {
     //Add 'implements OnInit' to the class.
     this.destinationSlug = this.route.snapshot.paramMap.get('slug');
     this.getdestination();
+
   }
 
   getdestination() {
@@ -51,6 +71,7 @@ export class DestinationDetailComponent {
         this.location = this.destination.location;
         this.transport = this.destination.transport;
         this.accommodations = this.destination.accommodations;
+        this.itineraries = this.destination.itiniraries
         this.getDestinationCountry(this.destinationSingle.country);
         this.titleService.setTitle(this.destinationSingle.name);
       },

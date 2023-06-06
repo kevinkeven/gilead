@@ -35,6 +35,10 @@ const routes: Routes = [
       import('./enquire/enquire.module').then((m) => m.EnquireModule),
   },
   {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
+  },
+  {
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
@@ -46,7 +50,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

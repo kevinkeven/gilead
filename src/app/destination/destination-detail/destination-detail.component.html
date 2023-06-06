@@ -21,7 +21,7 @@
       <a
         routerLink="/destination"
         class="text-white mb-auto hover:text-gilead-primary capitalize"
-        >accommodation</a
+        >destination</a
       >
     </li>
     <li>
@@ -52,7 +52,7 @@
       {{ destinationSingle.description }}
     </p>
   </div>
-  <div class="relative w-full aspect-w-16 aspect-h-10 bg-gray-900">
+  <!-- <div class="relative w-full aspect-w-16 aspect-h-10 bg-gray-900">
     <div class="absolute inset-0 flex items-center justify-center">
       <svg
         class="w-16 h-16 text-gilead-primary"
@@ -62,24 +62,29 @@
         <path d="M6 4l15 8-15 8V4z" fill="currentColor" />
       </svg>
     </div>
-  </div>
+  </div> -->
 </section>
+
+
 <!-- highlight and activities Section -->
-<section class="bg-zinc-800 mx-auto px-5 py-16 space-y-12 w-screen">
+<section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
+  <div class="flex justify-center">
+    <div class="bg-zinc-200 h-1 w-1/2"></div>
+  </div>
   <!-- highlight and activities Detail -->
   <div
-    class="flex sm:flex-row flex-cols items-start justify-between sm:mx-5 gap-5 text-center p-10"
+    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10"
   >
     <div class="space-y-5">
       <h1
-        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
-        HighLight
+      HighLight
       </h1>
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHiglight of highlights" class="flex gap-1">
           <i
-            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationHiglight.highlight_title
@@ -90,14 +95,14 @@
     </div>
     <div class="space-y-5">
       <h1
-        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
-        Iconic traits
+      Iconic traits
       </h1>
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHighlight of highlights" class="flex gap-1">
           <i
-            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationHighlight.highlight_title
@@ -108,6 +113,7 @@
     </div>
   </div>
 </section>
+
 <!-- DESTINATION MAP -->
 <section class="bg-white mx-auto px-5 py-16 w-screen">
   <div
@@ -124,8 +130,9 @@
     <!-- <img [src]="destinationSingle.destination_map" alt="" /> -->
   </div>
 </section>
+
 <!-- Month Section -->
-<section class="bg-zinc-100 mx-auto px-5 py-16 space-y-5 w-screen">
+<section class="bg-zinc-800 mx-auto px-5 py-16 space-y-5 w-screen">
   <!-- Month Description -->
   <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center mb-16"
@@ -134,7 +141,7 @@
       Monthly schedule
     </h1>
     <h1
-      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
     >
       period of visit
     </h1>
@@ -152,7 +159,7 @@
     >
       <a
         routerLink="/"
-        class="text-zinc-900 text-sm tracking-widest font-semibold uppercase"
+        class="text-white text-sm tracking-widest font-semibold uppercase"
         >{{ month.month }}</a
       >
     </li>
@@ -172,44 +179,11 @@
       ></i>
       <a
         routerLink="/"
-        class="text-zinc-200 text-sm tracking-wide font-semibold uppercase"
+        class="text-white text-sm tracking-wide font-semibold uppercase"
         >{{ monthName }}</a
       >
     </li>
   </ul>
-</section>
-
-<!-- wildlife Section -->
-<section class="bg-zinc-800 mx-auto px-5 py-16 w-screen">
-  <div
-    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
-  >
-    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
-      Enriching encounters
-    </h1>
-    <h1
-      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
-    >
-      CLASSIC WILD LIFE
-    </h1>
-    <p
-      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
-    >
-      Whether you want to tick the Big Five off your bucket list or seek out
-      specific safari species, our expert guides reveal the typical wildlife
-      sightings to expect in the Maasai Mara
-    </p>
-  </div>
-  <div class="grid sm:grid-cols-4 grid-cols-2 mt-8 gap-5">
-    <div
-      *ngFor="let animal of destinationSingle.wildlife"
-      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 border border-gilead-primary rounded-md"
-    >
-      <div class="text-xl font-semibold tracking-widest text-gilead-primary">
-        {{ animal }}
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- Accommodation Section -->
@@ -259,5 +233,92 @@
         View all Accommodation
       </a>
     </div>
+  </div>
+</section>
+
+<!-- wildlife Section -->
+<section class="bg-zinc-800 mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Enriching encounters
+    </h1>
+    <h1
+      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      CLASSIC WILD LIFE
+    </h1>
+    <p
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      Whether you want to tick the Big Five off your bucket list or seek out
+      specific safari species, our expert guides reveal the typical wildlife
+      sightings to expect in the Maasai Mara
+    </p>
+  </div>
+  <div class="grid sm:grid-cols-4 grid-cols-2 mt-8 gap-5">
+    <div
+      *ngFor="let animal of destinationSingle.wildlife"
+      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 border-r-4 border-l-4 border-gilead-primary"
+    >
+      <div class="text-xl font-semibold tracking-widest text-gilead-primary">
+        {{ animal }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Itineraries Section -->
+<section class="bg-zinc-100 mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Typical Itineraries
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      TRIP INSPIRATION
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Every custom gilead summit holidays tour is exhilarating, with magnificent
+      animals, incredible natural marvels, attractive beaches, and interesting
+      towns. Uncertain about where to go? Experience the excitement with this
+      uplifting collection of favorites, whether it's a must-do excursion, a
+      milestone celebration, or just a much-needed getaway.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 first:ml-20 mt-20">
+    <p-carousel
+      [value]="itineraries"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-itinerary pTemplate="item">
+        <app-itineraries-single
+          class="p-10"
+          [itinerarySlug]="itinerary.slug"
+          [itineraryImage]="itinerary.image"
+          [itineraryTitle]="itinerary.name"
+          [itineraryDescription]="itinerary.description"
+          [itineraryPrice]="itinerary.price"
+          [itineraryDuration]="itinerary.duration"
+          [itineraryDepartureFrom]="itinerary.departureFrom"
+          [itineraryDestination]="itinerary.country"
+        ></app-itineraries-single>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/itineraries"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all Itineraries
+    </a>
   </div>
 </section>

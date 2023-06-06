@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ItinerariesService } from './itineraries.service';
+
 
 @Component({
   selector: 'app-itineraries',
@@ -6,6 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./itineraries.component.css'],
 })
 export class ItinerariesComponent {
+  Itineraries: any
+  constructor(private itinerariesService:ItinerariesService) {}
+
+  ngOnInit() {
+    this.itinerariesService.getItineraries().subscribe({
+      next: result => {
+        this.Itineraries = result
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
+  }
+
   ToggleMegamenu = false;
   items = [
     {

@@ -1,16 +1,20 @@
-<app-header [backgroundImage]="'assets/nyungwe-np-Copy-scaled.jpg'">
-  <h1 class="text-4xl font-bold tracking-wider text-white sm:sm:text-6xl">
-    Discover Authentic Africa with Gilead Summit Holidays
-  </h1>
-  <div class="mt-10 flex items-center justify-center gap-x-6">
-    <a
-      href="#"
-      class="bg-gilead-primary px-8 py-4 uppercase font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >start your journey</a
+<app-header [backgroundImage]="'assets/IMG_9368.webp'">
+  <div class="mt-40">
+    <h1
+      class="text-4xl font-bold tracking-wider text-white sm:sm:text-6xl uppercase max-w-full leading-loose"
     >
+      Discover Authentic Africa
+    </h1>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <a
+        href="#"
+        class="bg-gilead-primary px-8 py-4 uppercase font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >start your journey</a
+      >
+    </div>
   </div>
 </app-header>
-<!-- WHY TRAVEL WITH GILDEAD -->
+<!-- WELCOME TO GILEAD SUMMIT HOLIDAYS -->
 <section class="bg-zinc-800 mx-auto px-5 py-32 space-y-16 w-screen">
   <!-- Your Travel.Our expertise -->
   <div
@@ -24,25 +28,29 @@
     >
       Welcome to Gilead summit holidays
     </h1>
-    <p
-      class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
-    >
-      Your gateway to the breathtaking wilderness of Uganda and Rwanda. We are a
-      committed tour company that offers affordable luxury services to clients
-      who want to explore East Africa’s natural beauty and rich cultural
-      heritage.
-    </p>
-    <p
-      class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
-    >
-      We offer a wide variety of safari packages to cater to every taste and
-      budget. Whether you’re in search of an adventure-packed journey through
-      the wilderness or a relaxing getaway with your significant other, we have
-      something for everyone. Our specialized packages include gorilla tracking
-      safaris, birding safaris, adventure safaris, honeymoon packages, fly-in
-      safaris, and custom-made safaris. With our diverse range of options, you
-      can find the perfect safari experience that suits your needs.
-    </p>
+    <div class="max-w-7xl">
+      <p
+        class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+      >
+        Your gateway to the breathtaking wilderness of Uganda and Rwanda. We are
+        a committed tour company that offers affordable luxury services to
+        clients who want to explore East Africa’s natural beauty and rich
+        cultural heritage.
+      </p>
+      <p
+        class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+      >
+        We offer a wide variety of safari packages to cater to every taste and
+        budget. Whether you’re in search of an adventure-packed journey through
+        the wilderness or a relaxing getaway with your significant other, we
+        have something for everyone. Our specialized packages include gorilla
+        tracking safaris, birding safaris, adventure safaris, honeymoon
+        packages, fly-in safaris, and custom-made safaris. With our diverse
+        range of options, you can find the perfect safari experience that suits
+        your needs.
+      </p>
+    </div>
+
     <a
       href="/about-us"
       type="button"
@@ -52,11 +60,12 @@
     </a>
   </div>
 
-  <div class="flex gap-5 items-center justify-center">
+  <!-- CUSTOMER REVIEWS -->
+  <!-- <div class="flex gap-5 items-center justify-center">
     <strong class="text-white text-xl leading-9">CUSTOMER REVIEWS</strong>
-  </div>
+  </div> -->
   <!-- REVIEW SECTION -->
-  <div
+  <!-- <div
     class="grid sm:grid-cols-3 grid-cols-2 gap-5 text-center justify-items-center"
   >
     <div class="flex flex-col gap-2 items-center">
@@ -116,7 +125,7 @@
         162 Review
       </p>
     </div>
-  </div>
+  </div> -->
 </section>
 <!-- ICONIC DESTINATIONS -->
 <section class="mx-auto px-5 py-32 space-y-16 w-screen">
@@ -140,7 +149,7 @@
   <!-- LOGO SECTION -->
   <div class="mt-6">
     <div class="grid sm:grid-cols-3 grid-cols-1 px-3">
-      <ng-container *ngFor="let destination of Destination ">
+      <ng-container *ngFor="let destination of Destination">
         <app-single-destination
           [destinationId]="destination.id"
           [destinationUrl]="destination.slug"
@@ -160,7 +169,7 @@
   </div>
 </section>
 <!-- Itineraries Section -->
-<section class="bg-white mx-auto px-5 py-20 space-y-16 w-screen">
+<section class="bg-zinc-100 mx-auto px-5 py-20 space-y-16 w-screen">
   <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
   >
@@ -201,6 +210,106 @@
       class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
     >
       View all itineraries
+    </a>
+  </div>
+</section>
+
+<!-- BOOKING WITH GILEAD -->
+<section class="bg-zinc-800 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Travel responsibly
+    </h1>
+    <h1
+      class="uppercase text-white tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      booking a safari with Gilead
+    </h1>
+    <div class="max-w-7xl">
+      <p
+        class="mt-6 text-base sm:text-xl font-light leading-8 text-gray-400 max-w-8xl text-center"
+      >
+        Booking a Safari with Gilead offers an unforgettable wildlife adventure
+        in Rwanda and Uganda. Embark on a journey through breathtaking
+        landscapes, encountering magnificent gorillas, graceful zebras, and
+        majestic lions in their natural habitats. Gilead's expert guides ensure
+        a seamless experience, guiding you through lush rainforests, sprawling
+        savannahs, and serene lakes. Immerse yourself in the vibrant cultures of
+        these East African nations, marvel at the diverse flora and fauna, and
+        create lifelong memories.
+      </p>
+    </div>
+  </div>
+
+  <!-- CUSTOMER REVIEWS -->
+  <!-- <div class="flex gap-5 items-center justify-center">
+    <strong class="text-white text-xl leading-9">CUSTOMER REVIEWS</strong>
+  </div> -->
+  <!-- REVIEW SECTION -->
+  <div
+    class="grid sm:grid-cols-4 grid-cols-2 gap-5 text-center justify-items-center"
+  >
+    <div
+      class="flex flex-col gap-5 items-center"
+      *ngFor="let items of book_withus_images"
+    >
+      <div class="h-32">
+        <img [src]="items.image" alt="" class="w-32 bg bg-cover" />
+      </div>
+      <div class="space-y-4">
+        <h1
+          class="text-base sm:text-xl leading-8 text-gilead-primary font-bold text-center uppercase tracking-widest"
+        >
+          {{ items.title }}
+        </h1>
+        <p
+          class="text-base sm:text-lg font-light leading-8 text-gray-400 max-w-7xl text-center"
+        >
+          {{ items.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section class="bg-white mx-auto px-5 py-20 space-y-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Stay Updated with us
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Travel Tips and News
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Discover the untamed beauty of Rwanda and Uganda through our captivating
+      safari blog. Get inspired for your next adventure!
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 first:ml-20 mt-20">
+    <ng-container *ngFor="let post of blogPosts">
+      <app-blog-single
+        [slug]="post.slug"
+        [image]="post.image"
+        [title]="post.title"
+        [desc]="post.body"
+      ></app-blog-single>
+    </ng-container>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/blog"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all Blog
     </a>
   </div>
 </section>

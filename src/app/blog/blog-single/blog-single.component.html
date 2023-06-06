@@ -1,0 +1,33 @@
+<div class="p-5">
+  <a class="" [routerLink]="['/blog/detail/', slug]">
+    <div
+      class="max-w-md overflow-hidden shadow transition-all duration-500 hover:shadow-lg hover:scale-105 bg-zinc-50"
+    >
+      <div class="border-t-4 border-gilead-primary">
+        <img
+          class="w-full h-72 object-cover"
+          alt="Itinerary Image"
+          [src]="image"
+        />
+      </div>
+      <div class="px-6 py-4 flex flex-col justify-center items-center gap-5">
+        <div
+          class="font-bold text-gilead-primary sm:text-xl text-md tracking-widest text-center line-clamp-2"
+        >
+          {{ title }}
+        </div>
+        <div class="bg-zinc-200 h-0.5 mt-5 w-56"></div>
+        <p
+          class="text-sm font-light leading-5 text-zinc-400 line-clamp-3 text-center"
+        >
+          {{ desc }}
+        </p>
+        <div class="capitalize">
+          <a href="" class="text-gilead-primary tracking-widest text-lg"
+            >Read more</a
+          >
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ButtomFooterComponent } from './footer/buttom-footer/buttom-footer.component';
 
-
 @NgModule({
   declarations: [
     SharedComponent,
@@ -23,6 +22,11 @@ import { ButtomFooterComponent } from './footer/buttom-footer/buttom-footer.comp
     ButtomFooterComponent,
   ],
   imports: [CommonModule, SharedRoutingModule, HttpClientModule],
-  exports: [HeaderComponent, FooterComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    MainMenuComponent,
+    TopMenuComponent,
+  ],
 })
 export class SharedModule {}

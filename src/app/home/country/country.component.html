@@ -33,7 +33,7 @@
 </app-header>
 
 <!-- Country Detail Section -->
-<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen">
+<section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
   <!-- Country Detail -->
   <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
@@ -54,22 +54,25 @@
   </div>
 </section>
 
-<!-- Famousfor and homeof Section -->
-<section class="bg-zinc-800 mx-auto px-5 py-16 space-y-12 w-screen">
-  <!-- Famousfor and homeof Detail -->
+<!-- famous and homeof Section -->
+<section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
+  <div class="flex justify-center">
+    <div class="bg-zinc-200 h-1 w-1/2"></div>
+  </div>
+  <!-- highlight and activities Detail -->
   <div
-    class="flex sm:flex-row flex-cols items-start justify-between sm:mx-5 gap-5 text-center p-10"
+    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10"
   >
     <div class="space-y-5">
       <h1
-        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
         Famous of
       </h1>
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHiglight of famousof" class="flex gap-1">
           <i
-            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationHiglight.title
@@ -80,14 +83,14 @@
     </div>
     <div class="space-y-5">
       <h1
-        class="uppercase text-start text-xl font-extrabold tracking-widest text-white"
+        class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
         Home Of
       </h1>
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHighlight of homeof" class="flex gap-1">
           <i
-            class="bi bi-check-circle-fill text-gilead-primary tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationHighlight.title
@@ -96,97 +99,6 @@
         </li>
       </ul>
     </div>
-  </div>
-</section>
-
-<!-- Gallery section -->
-<section class="bg-white mx-auto px-5 py-16 w-screen">
-  <div
-    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
-  >
-    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
-      You in this scenario
-    </h1>
-    <h1
-      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
-    >
-      {{ country.name }} gallery
-    </h1>
-    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
-      The ideal setting for your trip to {{ country.name }} includes
-      breathtaking landscapes and animals, a rich cultural history, and
-      recognizable sites.
-    </p>
-  </div>
-
-  <div class="flex items-center justify-center mt-5">
-    <div class="card">
-      <div class="flex"></div>
-      <p-carousel
-        [value]="gallery"
-        [numVisible]="2"
-        [numScroll]="1"
-        [responsiveOptions]="responsiveOptions"
-      >
-        <ng-template let-image pTemplate="item">
-          <img [src]="image.image" [alt]="image.caption" class="w-full px-5" />
-        </ng-template>
-      </p-carousel>
-    </div>
-  </div>
-</section>
-
-<!-- Itineraries Section -->
-<section class="bg-white mx-auto px-5 py-20 w-screen">
-  <div
-    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
-  >
-    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
-      Typical Itineraries
-    </h1>
-    <h1
-      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
-    >
-      TRIP INSPIRATION
-    </h1>
-    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
-      Every custom gilead summit holidays tour is exhilarating, with magnificent
-      animals, incredible natural marvels, attractive beaches, and interesting
-      towns. Uncertain about where to go? Experience the excitement with this
-      uplifting collection of favorites, whether it's a must-do excursion, a
-      milestone celebration, or just a much-needed getaway.
-    </p>
-  </div>
-
-  <div class="flex justify-center px-3 mt-10">
-    <p-carousel
-      [value]="itineraries"
-      [numVisible]="3"
-      [numScroll]="1"
-      [responsiveOptions]="responsiveOptions"
-    >
-      <ng-template let-itinerary pTemplate="item">
-        <app-itineraries-single
-          class="p-10"
-          [itinerarySlug]="itinerary.slug"
-          [itineraryImage]="itinerary.image"
-          [itineraryTitle]="itinerary.name"
-          [itineraryDescription]="itinerary.description"
-          [itineraryPrice]="itinerary.price"
-          [itineraryDuration]="itinerary.duration"
-          [itineraryDepartureFrom]="itinerary.departureFrom"
-          [itineraryDestination]="itinerary.country"
-        ></app-itineraries-single>
-      </ng-template>
-    </p-carousel>
-  </div>
-  <div class="flex justify-center px-8 capitalize">
-    <a
-      routerLink="/itineraries"
-      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
-    >
-      View all Itineraries
-    </a>
   </div>
 </section>
 
@@ -248,6 +160,98 @@
     </li>
   </ul>
 </section>
+
+<!-- Gallery section -->
+<section class="bg-white mx-auto px-5 py-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      You in this scenario
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      {{ country.name }} gallery
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      The ideal setting for your trip to {{ country.name }} includes
+      breathtaking landscapes and animals, a rich cultural history, and
+      recognizable sites.
+    </p>
+  </div>
+
+  <div class="flex items-center justify-center mt-5">
+    <div class="card">
+      <div class="flex"></div>
+      <p-carousel
+        [value]="gallery"
+        [numVisible]="2"
+        [numScroll]="1"
+        [responsiveOptions]="responsiveOptions"
+      >
+        <ng-template let-image pTemplate="item">
+          <img [src]="image.image" [alt]="image.caption" class="w-full px-5" />
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
+
+<!-- Itineraries Section -->
+<section class="bg-zinc-100 mx-auto px-5 py-20 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Typical Itineraries
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      TRIP INSPIRATION
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Every custom gilead summit holidays tour is exhilarating, with magnificent
+      animals, incredible natural marvels, attractive beaches, and interesting
+      towns. Uncertain about where to go? Experience the excitement with this
+      uplifting collection of favorites, whether it's a must-do excursion, a
+      milestone celebration, or just a much-needed getaway.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 first:ml-20 mt-20">
+    <p-carousel
+      [value]="itineraries"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-itinerary pTemplate="item">
+        <app-itineraries-single
+          class="p-10"
+          [itinerarySlug]="itinerary.slug"
+          [itineraryImage]="itinerary.image"
+          [itineraryTitle]="itinerary.name"
+          [itineraryDescription]="itinerary.description"
+          [itineraryPrice]="itinerary.price"
+          [itineraryDuration]="itinerary.duration"
+          [itineraryDepartureFrom]="itinerary.departureFrom"
+          [itineraryDestination]="itinerary.country"
+        ></app-itineraries-single>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="flex justify-center px-8 capitalize">
+    <a
+      routerLink="/itineraries"
+      class="cursor-pointer bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+    >
+      View all Itineraries
+    </a>
+  </div>
+</section>
+
 
 <!-- Accommodation Section -->
 <section class="bg-white mx-auto px-5 py-20 w-screen">

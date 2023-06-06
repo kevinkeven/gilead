@@ -1,8 +1,8 @@
-<nav class="bg-transparent border-b border-zinc-700 w-screen">
+<nav class="bg-white shadow-lg w-screen">
   <div class="flex flex-wrap items-center justify-between mx-5 p-5">
     <a href="/" class="flex items-center">
       <img
-        src="/assets/gilead_black.svg"
+        src="/assets/gilead_new.svg"
         class="h-12 mr-3"
         alt="Gilead Summit Holidays Logo"
       />
@@ -48,7 +48,7 @@
         <li>
           <a
             (click)="ToggleMegamenu = !ToggleMegamenu"
-            class="block cursor-pointer uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
+            class="block uppercase py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
             aria-current="page"
             >destinations<i class="pi pi-angle-down"></i
           ></a>
@@ -65,9 +65,7 @@
               <div
                 class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white bg-zinc-800"
               >
-                <div
-                  class="flex flex-col gap-5"
-                >
+                <div class="flex flex-col gap-5">
                   <div
                     class="p-5 text-gilead-primary underline mx-auto underline-offset-4 uppercase text-xl"
                   >
@@ -75,35 +73,34 @@
                   </div>
                   <div
                     *ngFor="let country of countries"
-                    class=" w-72 max-w-sm mx-auto bg-transparent flex items-center space-x-4"
+                    class="w-72 max-w-sm mx-auto bg-transparent flex items-center space-x-4"
                   >
-                  <a [routerLink]="['/', country.slug]" class="flex mx-auto  border p-6 border-zinc-700 rounded-md hover:bg-zinc-700">
-                    <div class="space-y-2">
-                      <div
-                        class="text-xl uppercase font-medium text-gilead-primary tracking-widest"
-                      >
-                        {{ country.name }}
+                    <a
+                      [routerLink]="['/', country.slug]"
+                      class="flex mx-auto border p-6 border-zinc-700 rounded-md hover:bg-zinc-700"
+                    >
+                      <div class="space-y-2">
+                        <div
+                          class="text-xl uppercase font-medium text-gilead-primary tracking-widest"
+                        >
+                          {{ country.name }}
+                        </div>
+                        <div class="bg-gilead-primary h-1 w-10"></div>
+                        <p class="text-zin-400 capitalize text-xs w-44">
+                          {{ country.slogan }}
+                        </p>
                       </div>
-                      <div class="bg-gilead-primary h-1 w-10"></div>
-                      <p class="text-zin-400 capitalize">
-                        {{ country.slogan }}
-                      </p>
-                    </div>
-                  </a>
-
+                    </a>
                   </div>
-
                 </div>
-
               </div>
               <!-- Destinations Section -->
-              <div class="flex flex-col col-span-2">
+              <div class="flex flex-col col-span-2 bg-zinc-100">
                 <a
-                *ngFor="let destination of destinations"
-                [routerLink]="['/destination', destination.slug]"
+                  *ngFor="let destination of destinations"
+                  [routerLink]="['/destination', destination.slug]"
                   class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-4"
                 >
-
                   <div class="shrink-0">
                     <img
                       class="h-24 w-24 object-cover rounded-full border-4 border-gilead-primary"
@@ -112,22 +109,20 @@
                     />
                   </div>
 
-                    <div
-                      class="text-lg uppercase font-semibold text-zinc-800 tracking-widest"
-                    >
+                  <div
+                    class="text-lg uppercase font-semibold text-zinc-800 tracking-widest"
+                  >
                     {{ destination.name }}
-                    </div>
-
+                  </div>
                 </a>
               </div>
-
             </div>
           </ng-container>
         </li>
         <li>
           <a
             href="#"
-            class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
+            class="block uppercase py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
             aria-current="page"
             >Tours <i class="pi pi-angle-down"></i
           ></a>
@@ -135,7 +130,7 @@
         <li>
           <a
             href="#"
-            class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
+            class="block uppercase py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
             aria-current="page"
             >Blog
           </a>
@@ -143,7 +138,7 @@
         <li>
           <a
             routerLink="['/about-us']"
-            class="block uppercase py-2 pl-3 pr-4 text-white text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-white md:p-0 md::text-white"
+            class="block uppercase py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
             aria-current="page"
             >About Us
           </a>
