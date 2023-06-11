@@ -1,1 +1,93 @@
-<p>blog-detail works!</p>
+<app-header [backgroundImage]="post.image">
+  <h1
+    class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
+  >
+    <!-- {{ destinationSingleCountry.name }} -->
+  </h1>
+  <h1
+    class="mt-6 font-bold uppercase sm:text-5xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    {{ post?.title }}
+  </h1>
+  <ul class="flex justify-center mt-10 sm:text-base text-sm items-baseline">
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/"
+        class="text-white self-baseline mb-auto text-base hover:text-gilead-primary"
+        >Home</a
+      >
+    </li>
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/destination"
+        class="text-white mb-auto hover:text-gilead-primary capitalize"
+        >destination</a
+      >
+    </li>
+    <li>
+      <strong class="capitalize text-white">{{
+        post?.name | lowercase
+      }}</strong>
+    </li>
+  </ul>
+</app-header>
+<!-- About Us Section -->
+<section
+  class="grid auto-cols-auto sm:grid-cols-4 gap-5 sm:px-32 sm:py-12 py-12 px-5 space-y-16 w-screen"
+>
+  <!-- About Us -->
+  <div class="col-span-3 flex flex-col sm:mx-auto gap-5">
+    <h1
+      class="capitalize text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      {{ post.title }}
+    </h1>
+    <h1 class="text-base text-zinc-400 mb-auto">
+      {{ post.created | date }}
+    </h1>
+    <p
+      class="mt-6 text-xl font-light break-all leading-8 text-gray-400 max-w-7xl first-letter:underline first-letter:underline-offset-8 first-letter:decoration-gilead-primary first-letter:text-gilead-primary"
+    >
+      Gilead Summit Holidays is your gateway to the enchanting wilderness of
+      Uganda and Rwanda. Established in 2021, we are a tour company committed to
+      providing affordable luxury services to our clients who wish to explore
+      the natural beauty and rich cultural heritage of East Africa. We offer a
+      range of safari packages to suit every taste and budget. Whether you’re
+      seeking an adventure-packed journey through the wilderness or a relaxing
+      getaway with your loved one, we’ve got you covered. Our specialized
+      packages include gorilla tracking safaris, birding safaris, adventure
+      safaris, honeymoon packages, fly-in safaris, and custom-made safaris.
+    </p>
+  </div>
+  <div class="relative">
+    <div class="sticky top-0 bg-zinc-100 p-5 border border-zinc-100">
+      <h1
+        class="uppercase text-gilead-primary tracking-widest text-base font-bold border-b-2 py-5 border-zinc-200"
+      >
+        Share Via
+      </h1>
+      <div class="grid grid-cols-5 mt-5 gap-3">
+        <a
+          class="border border-gilead-primary p-2 rounded-full text-center text-gilead-primary box-border w-12 h-12 hover:bg-gilead-primary hover:text-white"
+        >
+          <span class="bi bi-twitter text-xl"></span>
+        </a>
+        <a
+          class="border border-gilead-primary p-2 rounded-full text-center text-gilead-primary box-border w-12 h-12 hover:bg-gilead-primary hover:text-white"
+        >
+          <span class="bi bi-twitter text-xl"></span>
+        </a>
+        <a
+          class="border border-gilead-primary p-2 rounded-full text-center text-gilead-primary box-border w-12 h-12 hover:bg-gilead-primary hover:text-white"
+        >
+          <span class="bi bi-twitter text-xl"></span>
+        </a>
+        <a
+          class="border border-gilead-primary p-2 rounded-full text-center text-gilead-primary box-border w-12 h-12 hover:bg-gilead-primary hover:text-white"
+        >
+          <span class="bi bi-twitter text-xl"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

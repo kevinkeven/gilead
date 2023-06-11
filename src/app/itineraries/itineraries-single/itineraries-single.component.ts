@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DestinationService } from 'src/app/destination/destination.service';
 import { SharedService } from 'src/app/shared/shared.service';
-SharedService
+SharedService;
 
 @Component({
   selector: 'app-itineraries-single',
@@ -28,7 +28,6 @@ export class ItinerariesSingleComponent {
       .subscribe({
         next: (destination) => {
           this.destination = destination;
-          console.log(this.destination);
         },
       });
   }

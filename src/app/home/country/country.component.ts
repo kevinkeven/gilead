@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/shared/shared.service';
-SharedService
 
 @Component({
   selector: 'app-country',
@@ -11,7 +11,8 @@ SharedService
 export class CountryComponent {
   constructor(
     private sharedService: SharedService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private title: Title
   ) {}
 
   country: any;
@@ -34,10 +35,11 @@ export class CountryComponent {
       next: (data) => {
         this.countryDetail = data;
         this.country = this.countryDetail.country;
+        this.title.setTitle(this.country.name + '| Gilead Summit Holidays');
         this.famousof = this.countryDetail.countryfamousof;
         this.homeof = this.countryDetail.countryhomeFor;
         this.destinations = this.countryDetail.destinations.slice(0, 9);
-        this.itineraries = this.countryDetail.itineraries.slice(0,9);
+        this.itineraries = this.countryDetail.itineraries.slice(0, 9);
         this.gallery = this.countryDetail.galleryImages;
         this.countryMonth = this.countryDetail.countryMonth;
       },

@@ -1,0 +1,180 @@
+<!-- Header section -->
+<app-header [backgroundImage]="'assets/sunset-Gilead-summit-scaled.jpg'">
+  <h1
+    class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
+  >
+    Legacy and proficiency
+  </h1>
+  <h1
+    class="mt-6 font-bold uppercase sm:text-5xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
+  >
+    About Gilead Summit Holidays
+  </h1>
+  <ul class="flex justify-center mt-10 sm:text-base text-sm items-baseline">
+    <li class="after:content-['>'] after:text-gilead-primary after:px-2">
+      <a
+        routerLink="/"
+        class="text-white self-baseline mb-auto text-base hover:text-gilead-primary"
+        >Home</a
+      >
+    </li>
+    <li>
+      <strong class="capitalize text-white">{{
+        "About Us" | lowercase
+      }}</strong>
+    </li>
+  </ul>
+  <div class="mt-10 flex items-center justify-center gap-x-6">
+    <a
+      routerLink="/enquire"
+      class="bg-gilead-primary px-8 py-4 uppercase font-semibold text-white shadow-sm hover:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      >Book Your Dream Adventure Now</a
+    >
+  </div>
+</app-header>
+
+<!-- About Us Section -->
+<section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
+  <!-- About Us -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Who We Are
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      The African travel Experts, we are!
+    </h1>
+    <p
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center first-letter:underline first-letter:underline-offset-8 first-letter:decoration-gilead-primary first-letter:text-gilead-primary"
+    >
+      Gilead Summit Holidays is your gateway to the enchanting wilderness of
+      Uganda and Rwanda. Established in 2021, we are a tour company committed to
+      providing affordable luxury services to our clients who wish to explore
+      the natural beauty and rich cultural heritage of East Africa. We offer a
+      range of safari packages to suit every taste and budget. Whether you’re
+      seeking an adventure-packed journey through the wilderness or a relaxing
+      getaway with your loved one, we’ve got you covered. Our specialized
+      packages include gorilla tracking safaris, birding safaris, adventure
+      safaris, honeymoon packages, fly-in safaris, and custom-made safaris.
+    </p>
+
+    <p
+      *ngIf="readMore"
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      For those seeking a more romantic getaway, our honeymoon packages are
+      tailored to offer the ultimate romantic experience. From idyllic beaches
+      to stunning landscapes, we’ll take you on an unforgettable journey filled
+      with intimate moments that you’ll cherish for a lifetime.
+    </p>
+    <p
+      *ngIf="readMore"
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+    >
+      At Gilead Summit Holidays, we pride ourselves on providing top-notch
+      services to our clients. Our team of experienced guides and travel experts
+      are passionate about sharing their love for Africa with you. We ensure
+      that you have a memorable and safe experience during your trip to Uganda
+      and Rwanda. From luxurious accommodation to comfortable transportation, we
+      take care of everything, leaving you to enjoy your safari without any
+      worries.
+    </p>
+    <a
+      (click)="ReadMore()"
+      class="cursor-pointer font-semibold text-lg tracking-wider underline underline-offset-4 decoration-gilead-primary text-gilead-primary"
+      >Read more</a
+    >
+  </div>
+</section>
+
+<!-- Our mission, vision, and value section -->
+<section class="bg-zinc-50 mx-auto px-5 py-32 space-y-16 w-screen">
+  <div
+    class="grid sm:grid-cols-3 grid-cols-2 gap-5 text-center justify-items-center"
+  >
+    <div
+      class="flex flex-col gap-5 items-center bg-white p-5 border border-zinc-100"
+      *ngFor="let items of gilead_values"
+    >
+      <div class="space-y-4">
+        <h1
+          class="text-base sm:text-xl leading-8 text-zinc-800 underline underline-offset-8 decoration-gilead-primary font-bold text-center uppercase tracking-widest"
+        >
+          {{ items.title }}
+        </h1>
+        <p
+          class="text-base sm:text-lg font-light leading-8 text-gray-400 max-w-7xl text-center"
+        >
+          {{ items.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- what we do, why book with us -->
+<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div>
+    <p-tabView class="gilead-tab-what">
+      <p-tabPanel header="What we Do">
+        <p>
+          We understand that planning a holiday can be a daunting task, so here
+          at Gilead Summit Holidays, we are dedicated to making your vacation
+          extra special. From private safaris and exclusive game drives to
+          lavish accommodations and spectacular sunsets, we offer a truly unique
+          and unforgettable experience. Our team is dedicated to making sure
+          that your holiday experience is as perfect as it can be. We endeavor
+          to offer the best of Uganda and Rwanda, from the beautiful scenery to
+          the friendly locals, to the delicious food. We strive to make your
+          trip as unforgettable as possible. We are proud of the high-quality
+          services we provide and aim to give our clients the best travel
+          experience possible. We guarantee that you will have a holiday to
+          remember when you travel with us. So, don’t wait, book your trip with
+          us today and start your journey to Uganda and Rwanda!
+        </p>
+      </p-tabPanel>
+      <p-tabPanel header="Why Book With Us">
+        <p>
+          Booking with us means a stress-free and personalized travel
+          experience, tailored to your unique preferences and needs. With our
+          expertise, local knowledge, and passion for travel, we go above and
+          beyond to ensure that every trip is unforgettable. Let us take care of
+          all the details so you can focus on creating memories that last a
+          lifetime.
+        </p>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <!-- CUSTOMER REVIEWS -->
+  <!-- <div class="flex gap-5 items-center justify-center">
+    <strong class="text-white text-xl leading-9">CUSTOMER REVIEWS</strong>
+  </div> -->
+  <!-- REVIEW SECTION -->
+</section>
+
+<!-- BOOKING WITH GILEAD -->
+<section class="bg-zinc-800 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- REVIEW SECTION -->
+  <div
+    class="grid sm:grid-cols-3 grid-cols-1 gap-5 text-center justify-items-center"
+  >
+    <div class="flex flex-col gap-5 items-center" *ngFor="let items of values">
+      <div class="space-y-4">
+        <h1
+          class="text-base sm:text-xl leading-8 text-gilead-primary font-bold text-center uppercase tracking-widest"
+        >
+          {{ items.title }}
+        </h1>
+        <p
+          class="text-base sm:text-lg font-light leading-8 text-gray-400 max-w-7xl text-center"
+        >
+          {{ items.desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

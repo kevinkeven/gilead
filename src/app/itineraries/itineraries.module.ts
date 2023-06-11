@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CarouselModule } from 'primeng/carousel';
 import { TimelineModule } from 'primeng/timeline';
 import { MegaMenuModule } from 'primeng/megamenu';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MegaMenuModule } from 'primeng/megamenu';
     CarouselModule,
     TimelineModule,
     MegaMenuModule,
+    PaginatorModule,
   ],
   exports: [ItinerariesSingleComponent],
 })

@@ -4885,6 +4885,13 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 .p-splitter .p-splitter-gutter-resizing {
   background: #dee2e6;
 }
+.p-tabview-nav-container {
+  /* position: relative; */
+  display: flex !important;
+  flex-flow: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
 
 .p-tabview .p-tabview-nav {
   background: #ffffff;
@@ -4921,9 +4928,9 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: #6c757d;
 }
 .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-  background: #ffffff;
-  border-color: #3b82f6;
-  color: #3b82f6;
+  background: #ffffff00;
+  border-color: #e48e45;
+  color: #e48e45;
 }
 .p-tabview .p-tabview-left-icon {
   margin-right: 0.5rem;
@@ -4951,9 +4958,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   background: #ffffff;
   padding: 1.25rem;
   border: 0 none;
-  color: #495057;
+  color: #9ca3af;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+  font-size: 16px;
 }
 
 .p-toolbar {

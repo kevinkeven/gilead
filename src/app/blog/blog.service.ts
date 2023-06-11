@@ -14,4 +14,7 @@ export class BlogService {
   getAllPosts() {
     return this.http.get(`${this.blogurl}list/`);
   }
+  getPostDetail(slug: any) {
+    return this.http.get(`${this.blogurl}detail/${slug}`);
+  }
 }

@@ -10,9 +10,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { EnquireModule } from './enquire/enquire.module';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { TabViewModule } from 'primeng/tabview';
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PageNotFoundComponent, AboutUsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -21,6 +24,8 @@ import { EnquireModule } from './enquire/enquire.module';
     DestinationModule,
     SharedModule,
     EnquireModule,
+    TabViewModule,
+    ImageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

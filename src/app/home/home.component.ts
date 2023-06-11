@@ -72,9 +72,6 @@ export class HomeComponent {
       next: (destination: any) => {
         this.Destination = destination.slice(0, 5);
       },
-      error: (err) => {
-        console.log(err);
-      },
     });
   }
 
@@ -83,16 +80,12 @@ export class HomeComponent {
       next: (itineraries) => {
         this.itinerariese = itineraries;
       },
-      error: (err) => {
-        console.log(err);
-      },
     });
   }
   getposts() {
     this.blogService.getAllPosts().subscribe({
       next: (value) => {
         this.blogPosts = value;
-        console.log(value);
       },
     });
   }
