@@ -14,7 +14,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./your-trip.component.css'],
 })
 export class YourTripComponent {
-  constructor(private enquireService: EnquireService, private router: Router) {}
+  maxDate: string;
+  constructor(private enquireService: EnquireService, private router: Router) {
+    const currentDate = new Date();
+    currentDate.setFullYear(currentDate.getFullYear() + 3);
+    this.maxDate = currentDate.toISOString().split('T')[0];
+  }
+  today = new Date().toISOString().split('T')[0];
 
   @Output() yourTripdata!: any;
   TravelTypes = [

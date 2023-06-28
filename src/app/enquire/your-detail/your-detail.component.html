@@ -15,9 +15,10 @@
         }"
         type="email"
         name="email"
+        placeholder="e.g Johndoe@example.com"
         id="email"
         formControlName="email"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         required=""
       />
       <ng-container *ngIf="email?.invalid && email?.touched">
@@ -42,8 +43,9 @@
         type="text"
         name="first_name"
         id="first_name"
+        placeholder="e.g. John"
         formControlName="first_name"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         [ngClass]="{
           'border-red-500':
             (first_name?.touched && first_name?.hasError('required')) ||
@@ -71,6 +73,7 @@
       >
       <input
         type="text"
+        placeholder="e.g Doe"
         name="last_name"
         id="last_name"
         formControlName="last_name"
@@ -78,7 +81,7 @@
           'border-red-500':
             last_name?.touched && last_name?.hasError('required')
         }"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         required=""
       />
       <ng-container *ngIf="last_name?.invalid && last_name?.touched">
@@ -105,13 +108,14 @@
         type="text"
         name="phone_number"
         id="phone_number"
+        placeholder="e.g +256 000 000 0000"
         formControlName="phone_number"
         [ngClass]="{
           'border-red-500':
             (phone_number?.touched && phone_number?.hasError('required')) ||
             phone_number?.hasError('pattern')
         }"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         step="1"
         required=""
       />
@@ -133,17 +137,24 @@
         class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
         >Country ?</label
       >
-      <input
-        type="text"
-        name="country"
-        id="country"
-        formControlName="country"
+      <select
         [ngClass]="{
-          'border-red-500': country?.touched && country?.hasError('required')
-        }"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
-        required=""
-      />
+      'border-red-500':
+        country?.touched && country?.hasError('required'),
+    }"
+        id="category"
+        formControlName="country"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+      >
+        <option selected>Select category</option>
+        <option
+          *ngFor="let country of countries"
+          [value]="country.name"
+          class="text-gray-800"
+        >
+          {{ country.name }}
+        </option>
+      </select>
       <ng-container *ngIf="country?.invalid && country?.touched">
         <div class="py-3 text-red-500 tracking-wide">
           <p class="capitalize" *ngIf="country?.hasError('required')">
@@ -161,16 +172,15 @@
   <!-- next step Button -->
   <div class="mt-6 flex items-center justify-end gap-x-6">
     <button
-      class="py-2 px-6 capitalize border bg-zinc-200 text-gilead-primary space-x-5 hover:bg-zinc-400 hover:text-white transition-colors duration-300 ease-in-out"
+      (click)="goBack()"
+      class="py-3 px-6 uppercase disabled:cursor-not-allowed font-black space-x-2 bg-zinc-50 border border-gilead-primary text-gilead-primary transition-colors duration-300 ease-in-out"
     >
-      <i class="bi bi-arrow-left-circle-fill"></i>
-      Go back
+      Go Back
     </button>
-
     <button
       [disabled]="yourDetail.invalid"
       type="submit"
-      class="py-3 px-6 uppercase disabled:cursor-not-allowed disabled:bg-orange-200 space-x-2 bg-gilead-primary text-white transition-colors duration-300 ease-in-out"
+      class="py-3 px-6 uppercase disabled:cursor-not-allowed font-black disabled:bg-orange-200 space-x-2 bg-gilead-primary text-white transition-colors duration-300 ease-in-out"
     >
       <i
         *ngIf="loading"

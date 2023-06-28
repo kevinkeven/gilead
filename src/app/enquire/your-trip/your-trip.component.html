@@ -45,7 +45,10 @@
         formControlName="travel_date"
         name="travel_date"
         id="travel_date"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        format="yyyy-MM-dd"
+        [min]="today | date : 'yyyy-MM-dd'"
+        [max]="maxDate | date : 'yyyy-MM-dd'"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         required=""
       />
       <ng-container *ngIf="travel_date?.invalid && travel_date?.touched">
@@ -73,7 +76,7 @@
         name="travel_duration"
         formControlName="travel_duration"
         id="travel_duration"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
         required=""
       />
       <ng-container
@@ -102,7 +105,7 @@
       }"
         id="category"
         formControlName="travel_type"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
       >
         <option selected="">Select category</option>
         <option *ngFor="let type of TravelTypes" [value]="type.value">
@@ -134,7 +137,7 @@
       <select
         formControlName="adults"
         id="adults"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
       >
         <option selected="">1</option>
         <option *ngFor="let type of [2, 3, 4, 5, 6, 7, 8, 9]">
@@ -153,7 +156,7 @@
       <select
         id="category"
         formControlName="children"
-        class="bg-zinc-100 border border-gray-300 text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+        class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
       >
         <option selected="">0</option>
         <option *ngFor="let type of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
@@ -173,7 +176,7 @@
         id="description"
         rows="8"
         formControlName="special_request"
-        class="block p-2.5 w-full placeholder:uppercase text-sm text-gray-900 bg-zinc-100 border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
+        class="block p-2.5 w-full placeholder:uppercase text-sm text-gray-900 bg-zinc-100 border focus:ring-primary-500 focus:border-primary-500"
         placeholder="tell us if you have specific plans"
       ></textarea>
     </div>

@@ -2,7 +2,7 @@
   <h1
     class="font-bold tracking-wider text-gilead-primary font-kaushan text-3xl leading-relaxed"
   >
-    <!-- {{ destinationSingleCountry.name }} -->
+    {{ destinationSingleCountry.name }}
   </h1>
   <h1
     class="mt-6 font-bold uppercase sm:text-5xl text-3xl leading-normal tracking-wider text-white border-r-4 border-l-4 border-gilead-primary p-5"
@@ -33,7 +33,7 @@
 </app-header>
 
 <!-- Destination Detail Section -->
-<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen">
+<section class="bg-white mx-auto px-5 py-16 space-y-16 w-screen shadow-md">
   <!-- Destination Detail -->
   <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
@@ -47,7 +47,7 @@
       {{ destinationSingle.name }}
     </h1>
     <p
-      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center"
+      class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center whitespace-pre-line"
     >
       {{ destinationSingle.description }}
     </p>
@@ -65,21 +65,17 @@
   </div> -->
 </section>
 
-
 <!-- highlight and activities Section -->
 <section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
-  <div class="flex justify-center">
-    <div class="bg-zinc-200 h-1 w-1/2"></div>
-  </div>
   <!-- highlight and activities Detail -->
   <div
-    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10"
+    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10 bg-zinc-100"
   >
     <div class="space-y-5">
       <h1
         class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
-      HighLight
+        HighLight
       </h1>
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHiglight of highlights" class="flex gap-1">
@@ -97,15 +93,18 @@
       <h1
         class="uppercase text-start text-xl font-extrabold tracking-widest text-gilead-primary"
       >
-      Iconic traits
+        Activities
       </h1>
       <ul class="text-start flex flex-col gap-5">
-        <li *ngFor="let destinationHighlight of highlights" class="flex gap-1">
+        <li
+          *ngFor="let destinationActivities of destinationSingle.activities"
+          class="flex gap-1"
+        >
           <i
             class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
-            destinationHighlight.highlight_title
+            destinationActivities
           }}</strong>
           <hr />
         </li>
@@ -260,7 +259,7 @@
   <div class="grid sm:grid-cols-4 grid-cols-2 mt-8 gap-5">
     <div
       *ngFor="let animal of destinationSingle.wildlife"
-      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 border-r-4 border-l-4 border-gilead-primary"
+      class="px-10 py-4 w-48 mx-auto flex items-center space-x-4 border-2 border-gilead-primary"
     >
       <div class="text-xl font-semibold tracking-widest text-gilead-primary">
         {{ animal }}

@@ -13,6 +13,7 @@ import { YourDetailComponent } from './your-detail/your-detail.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
 import { CheckboxModule } from 'primeng/checkbox';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     CalendarModule,
     HttpClientModule,
     CheckboxModule,
+    DropdownModule,
   ],
 })
 export class EnquireModule {}

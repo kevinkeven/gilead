@@ -4,7 +4,6 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { SharedService } from 'src/app/shared/shared.service';
 
-
 @Component({
   selector: 'app-destination-detail',
   templateUrl: './destination-detail.component.html',
@@ -21,7 +20,7 @@ export class DestinationDetailComponent {
   location: any;
   accommodations: any;
   transport: any;
-  itineraries: any
+  itineraries: any;
 
   MonthMood = ['GOOD', 'BEST', 'MIXED'];
 
@@ -56,7 +55,6 @@ export class DestinationDetailComponent {
     //Add 'implements OnInit' to the class.
     this.destinationSlug = this.route.snapshot.paramMap.get('slug');
     this.getdestination();
-
   }
 
   getdestination() {
@@ -71,7 +69,7 @@ export class DestinationDetailComponent {
         this.location = this.destination.location;
         this.transport = this.destination.transport;
         this.accommodations = this.destination.accommodations;
-        this.itineraries = this.destination.itiniraries
+        this.itineraries = this.destination.itiniraries;
         this.getDestinationCountry(this.destinationSingle.country);
         this.titleService.setTitle(this.destinationSingle.name);
       },
@@ -83,15 +81,13 @@ export class DestinationDetailComponent {
     });
   }
   getDestinationCountry(id: any) {
-    this.sharedService
-      .getDestinationCountry(id)
-      .subscribe({
-        next: (country) => {
-          this.destinationSingleCountry = country;
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      });
+    this.sharedService.getDestinationCountry(id).subscribe({
+      next: (country) => {
+        this.destinationSingleCountry = country;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }
