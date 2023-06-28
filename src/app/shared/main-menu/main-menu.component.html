@@ -48,7 +48,7 @@
         <li>
           <a
             (click)="ToggleMegamenu = !ToggleMegamenu"
-            class="block uppercase py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
+            class="block uppercase cursor-pointer py-2 pl-3 pr-4 text-zinc-800 text-sm tracking-[0.2rem] rounded md:bg-transparent md:text-zinc-800 md:p-0 md::text-zinc-800"
             aria-current="page"
             >destinations<i class="pi pi-angle-down"></i
           ></a>
@@ -76,8 +76,8 @@
                     class="w-72 max-w-sm mx-auto bg-transparent flex items-center space-x-4"
                   >
                     <a
-                      [routerLink]="['/', country.slug]"
-                      class="flex mx-auto border p-6 border-zinc-700 rounded-md hover:bg-zinc-700"
+                      (click)="toCountry(country.slug)"
+                      class="flex mx-auto border p-6 border-zinc-700 rounded-md hover:bg-zinc-700 cursor-pointer"
                     >
                       <div class="space-y-2">
                         <div
@@ -95,22 +95,22 @@
                 </div>
               </div>
               <!-- Destinations Section -->
-              <div class="flex flex-col col-span-2 bg-zinc-100">
+              <div class="grid grid-cols-2 col-span-2 bg-zinc-100">
                 <a
                   *ngFor="let destination of destinations"
-                  [routerLink]="['/destination', destination.slug]"
-                  class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-4"
+                  (click)="todestination(destination.slug)"
+                  class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-5 cursor-pointer"
                 >
-                  <div class="shrink-0">
+                  <div class="shrink-0 self-center">
                     <img
-                      class="h-24 w-24 object-cover rounded-full border-4 border-gilead-primary"
+                      class="h-20 w-20 object-cover rounded-full border-4 border-gilead-primary"
                       [src]="destination.image"
                       alt="ChitChat Logo"
                     />
                   </div>
 
                   <div
-                    class="text-lg uppercase font-semibold text-zinc-800 tracking-widest"
+                    class="text-base self-center uppercase font-semibold text-zinc-800 tracking-widest"
                   >
                     {{ destination.name }}
                   </div>
