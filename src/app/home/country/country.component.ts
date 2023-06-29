@@ -15,6 +15,8 @@ export class CountryComponent {
     private title: Title
   ) {}
 
+  readMore: boolean = false;
+
   country: any;
   countryDetail: any;
   countrySlug: any;
@@ -62,5 +64,8 @@ export class CountryComponent {
         numScroll: 1,
       },
     ];
+  }
+  ReadMore() {
+    this.readMore = !this.readMore;
   }
 }
