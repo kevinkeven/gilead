@@ -47,10 +47,18 @@
       {{ destinationSingle.name }}
     </h1>
     <p
+      [ngClass]="{
+      'line-clamp-6': !readMore,
+    }"
       class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center whitespace-pre-line"
     >
       {{ destinationSingle.description }}
     </p>
+    <a
+      (click)="ReadMore()"
+      class="cursor-pointer font-semibold text-lg tracking-wider underline underline-offset-4 decoration-gilead-primary text-gilead-primary"
+      >Read more</a
+    >
   </div>
   <!-- <div class="relative w-full aspect-w-16 aspect-h-10 bg-gray-900">
     <div class="absolute inset-0 flex items-center justify-center">
@@ -67,9 +75,12 @@
 
 <!-- highlight and activities Section -->
 <section class="bg-white mx-auto px-5 py-12 space-y-16 w-screen">
+  <div class="flex justify-center">
+    <div class="bg-zinc-100 h-1 w-1/2"></div>
+  </div>
   <!-- highlight and activities Detail -->
   <div
-    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10 bg-zinc-100"
+    class="flex sm:flex-row flex-cols items-start justify-around sm:mx-5 gap-5 text-center p-10"
   >
     <div class="space-y-5">
       <h1
@@ -80,7 +91,7 @@
       <ul class="text-start flex flex-col gap-5">
         <li *ngFor="let destinationHiglight of highlights" class="flex gap-1">
           <i
-            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-2xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationHiglight.highlight_title
@@ -101,7 +112,7 @@
           class="flex gap-1"
         >
           <i
-            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-xl"
+            class="bi bi-check-circle-fill text-zinc-800 tracking-[1rem] text-2xl"
           ></i>
           <strong class="text-zinc-400 font-medium text-lg">{{
             destinationActivities

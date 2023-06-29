@@ -10,6 +10,8 @@ import { SharedService } from 'src/app/shared/shared.service';
   styleUrls: ['./destination-detail.component.css'],
 })
 export class DestinationDetailComponent {
+  readMore: boolean = false;
+
   destinationSlug: any;
   destinationSingle: any;
   destinationSingleCountry: any;
@@ -89,5 +91,8 @@ export class DestinationDetailComponent {
         console.log(err);
       },
     });
+  }
+  ReadMore() {
+    this.readMore = !this.readMore;
   }
 }
