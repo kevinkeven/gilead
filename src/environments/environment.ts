@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  APIURL: 'https://api.gileadsummitholidays.com/',
+  APIURL: 'https://api.gileadsummitholidays.com/api/',
 };
