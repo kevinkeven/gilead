@@ -11,9 +11,10 @@ import { CountryComponent } from './country/country.component';
 import { CarouselModule } from 'primeng/carousel';
 import { ItinerariesModule } from '../itineraries/itineraries.module';
 import { BlogModule } from '../blog/blog.module';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @NgModule({
-  declarations: [HomeComponent, CountryComponent],
+  declarations: [HomeComponent, CountryComponent, PrivacyPolicyComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
