@@ -29,7 +29,7 @@ export class AboutUsComponent {
       desc: 'Every itinerary is designed from scratch based on your travel interests and needs',
     },
     {
-      title: 'Tailor-Made For You',
+      title: 'Best Price Guaranteed',
       desc: 'Our Best Price Guarantee means that you can be sure of booking at the best rate.Best Price Guaranteed',
     },
     {

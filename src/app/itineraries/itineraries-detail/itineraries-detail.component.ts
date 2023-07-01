@@ -22,7 +22,7 @@ export class ItinerariesDetailComponent {
   included: any;
   excluded: any;
   dayByDay: any;
-  MonthMood = ['GOOD', 'BEST', 'MIXED'];
+  MonthMood = ['BEST', 'GOOD', 'MIXED'];
 
   ngOnInit() {
     this.itinerarySlug = this.route.snapshot.paramMap.get('slug');

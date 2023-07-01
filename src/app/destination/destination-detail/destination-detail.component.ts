@@ -24,7 +24,7 @@ export class DestinationDetailComponent {
   transport: any;
   itineraries: any;
 
-  MonthMood = ['GOOD', 'BEST', 'MIXED'];
+  MonthMood = ['BEST', 'GOOD', 'MIXED'];
 
   responsiveOptions = [
     {

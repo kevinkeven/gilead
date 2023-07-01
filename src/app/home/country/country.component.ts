@@ -28,7 +28,7 @@ export class CountryComponent {
   responsiveOptions: any;
   countryMonth: any;
 
-  MonthMood = ['GOOD', 'BEST', 'MIXED'];
+  MonthMood = ['BEST', 'GOOD', 'MIXED'];
 
   ngOnInit(): void {
     this.countrySlug = this.route.snapshot.paramMap.get('slug');

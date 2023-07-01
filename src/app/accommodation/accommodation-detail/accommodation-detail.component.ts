@@ -10,6 +10,7 @@ import { ItinerariesService } from 'src/app/itineraries/itineraries.service';
   styleUrls: ['./accommodation-detail.component.css'],
 })
 export class AccommodationDetailComponent {
+  readMore: boolean = false;
   accommmodationSlug: any;
   accommodationDetail: any;
   accommodationexpertview: any;
@@ -78,5 +79,8 @@ export class AccommodationDetailComponent {
         console.log(data);
       },
     });
+  }
+  ReadMore() {
+    this.readMore = !this.readMore;
   }
 }

@@ -55,7 +55,9 @@
     <a
       (click)="ReadMore()"
       class="cursor-pointer font-semibold text-lg tracking-wider underline underline-offset-4 decoration-gilead-primary text-gilead-primary"
-      >Read more</a
+      ><ng-container>
+        {{ readMore ? "Read less" : "Read more" }}
+      </ng-container></a
     >
   </div>
 </section>
@@ -131,8 +133,8 @@
   <ul class="flex justify-center sm:text-8xl text-sm items-baseline gap-5">
     <li
       [ngClass]="{
-        'border-green-300': month.when_to_visit === 'BEST',
         'border-gilead-primary': month.when_to_visit === 'GOOD',
+        'border-green-300': month.when_to_visit === 'BEST',
         'border-zinc-600': month.when_to_visit === 'MIXED'
       }"
       class="border-b-4 border-gilead-primary p-2 h-14 w-14 flex items-center justify-center"
