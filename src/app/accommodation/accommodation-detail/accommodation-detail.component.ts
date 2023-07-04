@@ -65,7 +65,7 @@ export class AccommodationDetailComponent {
         this.titleSerice.setTitle(this.accommodationDetail.name);
         this.accommodationexpertview = this.accommodation.expertview;
         this.accommodationglance = this.accommodation.glance;
-        this.accommodationtips = this.accommodation.insidertip[0];
+        this.accommodationtips = this.accommodation.insidertip;
         this.accommodationimages = this.accommodation.galleryImages;
         this.getItineraries();
       },
