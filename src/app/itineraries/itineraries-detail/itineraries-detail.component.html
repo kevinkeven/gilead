@@ -100,9 +100,12 @@
     </h1>
 
     <ul
-      class="grid sm:grid-cols-5 justify-center content-evenly sm:divide-x-4 divid sm:text-base text-sm items-baseline sm:gap-28"
+      class="grid sm:grid-cols-4 justify-center content-evenly sm:divide-x-4 divid sm:text-base text-sm items-baseline sm:gap-28"
     >
-      <li class="py-2 px-10 flex flex-col items-center justify-center gap-3">
+      <li
+        *ngIf="itinerary.price"
+        class="py-2 px-10 flex flex-col items-center justify-center gap-3"
+      >
         <span
           class="flex gap-3 self-center tracking-widest text-zinc-500 capitalize"
         >
@@ -266,7 +269,7 @@
           {{ daybyday.title }}
         </div>
         <p
-          class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl text-center tracking-wider"
+          class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl tracking-wider whitespace-pre-line first-line:text-center first-line:uppercase first-line:text-zinc-800"
         >
           {{ daybyday.description }}
         </p>
