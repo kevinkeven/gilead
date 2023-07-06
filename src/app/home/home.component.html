@@ -190,28 +190,20 @@
     </p>
   </div>
 
-  <div class="grid grid-cols-1 first:ml-20 mt-20">
-    <p-carousel
-      [value]="itinerariese"
-      [numVisible]="3"
-      [numScroll]="1"
-      [responsiveOptions]="responsiveOptions"
-    >
-      <ng-template let-itinerary pTemplate="item">
-        <app-itineraries-single
-          [itinerarySlug]="itinerary.slug"
-          [itineraryImage]="itinerary.image"
-          [itineraryTitle]="itinerary.name"
-          [itineraryDescription]="itinerary.description"
-          [itineraryPrice]="itinerary.price"
-          [itineraryDuration]="itinerary.duration"
-          [itineraryDepartureFrom]="itinerary.departureFrom"
-          [itineraryDestination]="itinerary.country"
-        ></app-itineraries-single>
-      </ng-template>
-    </p-carousel>
+  <div class="grid sm:grid-cols-4 grid-cols-1 first:ml-20 mt-20">
+    <ng-container *ngFor="let itinerary of itinerariese">
+      <app-itineraries-single
+        [itinerarySlug]="itinerary.slug"
+        [itineraryImage]="itinerary.image"
+        [itineraryTitle]="itinerary.name"
+        [itineraryDescription]="itinerary.description"
+        [itineraryPrice]="itinerary.price"
+        [itineraryDuration]="itinerary.duration"
+        [itineraryDepartureFrom]="itinerary.departureFrom"
+        [itineraryDestination]="itinerary.country"
+      ></app-itineraries-single>
+    </ng-container>
   </div>
-
   <div class="flex justify-center px-8 capitalize">
     <a
       routerLink="/itineraries"
