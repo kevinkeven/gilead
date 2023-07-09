@@ -1,1 +1,69 @@
-hhhj
+<!-- HEADER SECTION -->
+<section>
+  <app-top-menu></app-top-menu>
+  <app-main-menu></app-main-menu>
+</section>
+
+<!-- All Itineraries Section -->
+<section class="bg-zinc-100 mx-auto px-5 py-20 space-y-16 w-screen">
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-2xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Unlock Your Dream Destination
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Explore the World with Us
+    </h1>
+    <p class="text-xl font-light leading-8 text-gray-400 max-w-7xl text-center">
+      Immerse yourself in extraordinary journeys with Gilead Summit Holidays.
+      Explore breathtaking destinations around the globe, tailored to suit your
+      desires. Let our expert team curate unforgettable experiences, ensuring
+      every moment of your trip is filled with wonder and enchantment. Embark on
+      a journey of a lifetime with Gilead Summit Holidays.
+    </p>
+  </div>
+  <!-- <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center bg-zinz-50"
+  >
+    <div class="flex items-center space-x-4">
+      <label for="destination" class="text-gray-700">Destination:</label>
+      <select id="destination" name="destination" class="form-select w-48">
+        <option value="">All</option>
+        <option value="paris">Paris</option>
+        <option value="london">London</option>
+        <option value="new-york">New York</option>
+        <option value="tokyo">Tokyo</option>
+      </select>
+      <button
+        class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+      >
+        Filter
+      </button>
+    </div>
+  </div> -->
+
+  <div class="grid sm:grid-cols-3 grid-cols-1 first:ml-20 mt-20">
+    <ng-container *ngFor="let destination of Destination">
+      <app-single-destination
+        [destinationId]="destination.id"
+        [destinationUrl]="destination.slug"
+        [destinationName]="destination.name"
+        [destinationImage]="destination.image"
+      ></app-single-destination>
+    </ng-container>
+  </div>
+  <!-- <div>
+    <div class="card flex justify-content-center">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first"
+        [rows]="rows"
+        [totalRecords]="120"
+        [rowsPerPageOptions]="[10, 20, 30]"
+      ></p-paginator>
+    </div>
+  </div> -->
+</section>

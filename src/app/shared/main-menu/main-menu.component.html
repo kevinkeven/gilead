@@ -97,7 +97,7 @@
               <!-- Destinations Section -->
               <div class="grid grid-cols-2 col-span-2 bg-zinc-100">
                 <a
-                  *ngFor="let destination of destinations"
+                  *ngFor="let destination of destinations.slice(0, 6)"
                   (click)="todestination(destination.slug)"
                   class="p-6 overflow-hidden w-72 bg-transparent flex justify-start space-x-5 cursor-pointer"
                 >
@@ -114,6 +114,12 @@
                   >
                     {{ destination.name }}
                   </div>
+                </a>
+                <a
+                  routerLink="/destinations"
+                  class="cursor-pointer col-span-2 text-center bg-gilead-primary font-semibold py-5 px-8 sm:text-xl text-xs leading-8 text-white hover:bg-zinc-800"
+                >
+                  View all destinations
                 </a>
               </div>
             </div>
