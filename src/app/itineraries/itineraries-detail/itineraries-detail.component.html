@@ -323,9 +323,11 @@
   <div class="grid sm:grid-cols-5 grid-cols-2 mt-8 gap-5">
     <div
       *ngFor="let activity of itineraryactivity"
-      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 bg-gilead-primary shadow"
+      class="px-10 py-4 mx-auto flex items-center border-2 border-zinc-100 sm:w-72 w-44"
     >
-      <div class="text-xl font-semibold tracking-widest text-white max-w-5xl">
+      <div
+        class="sm:text-xl text-sm font-semibold tracking-widest text-gilead-primary"
+      >
         {{ activity.name }}
       </div>
     </div>
