@@ -70,7 +70,7 @@ export class HomeComponent {
   destination() {
     this.destinationService.getDestinations().subscribe({
       next: (destination: any) => {
-        this.Destination = destination.slice(0, 5);
+        this.Destination = destination;
       },
     });
   }
