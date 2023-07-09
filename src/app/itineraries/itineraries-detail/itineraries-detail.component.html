@@ -102,7 +102,7 @@
     <ul
       class="grid sm:grid-cols-4 justify-center content-evenly sm:divide-x-4 divid sm:text-base text-sm items-baseline sm:gap-28"
     >
-      <li
+      <!-- <li
         *ngIf="itinerary.price"
         class="py-2 px-10 flex flex-col items-center justify-center gap-3"
       >
@@ -116,7 +116,7 @@
         <strong class="text-base tracking-widest capitalize text-center"
           >$ {{ itinerary.price }} per person</strong
         >
-      </li>
+      </li> -->
       <li class="py-2 px-10 flex flex-col items-center justify-center gap-3">
         <span
           class="flex gap-3 self-center tracking-widest text-zinc-500 capitalize"
@@ -253,13 +253,13 @@
   <!-- itinerary SECTION -->
   <ul class="relative box-border flex flex-col items-center justify-center">
     <li
-      *ngFor="let daybyday of dayByDay; let last = last"
+      *ngFor="let daybyday of dayByDay; let last = last; let index = index"
       class="max-w-2xl rounded overflow-hidden"
     >
       <div
         class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 left-1.5 border border-white"
       ></div>
-      <ng-container *ngIf="daybyday.image">
+      <ng-container *ngIf="!daybyday.image">
         <img
           class="w-full"
           alt="Itinerary Image"
@@ -270,17 +270,23 @@
       <div
         class="px-6 flex flex-col items-center justify-center bg-white py-9 shadow-md"
       >
-        <div class="font-bold sm:text-2xl text-base mb-2 tracking-widest">
+        <div
+          class="font-bold sm:text-2xl text-base mb-2 tracking-widest uppercase"
+        >
+          <span class="font-black text-gilead-primary font-kaushan"
+            >DAY {{ index + 1 }}</span
+          >
+          <span class="font-black mx-3">|</span>
           {{ daybyday.title }}
         </div>
         <p
-          class="mt-6 text-xl font-light text-center leading-8 text-gray-400 max-w-7xl tracking-wider whitespace-pre-line first-line:font-bold first-line:uppercase first-line:text-zinc-600"
+          class="mt-6 text-xl font-light leading-8 text-gray-400 max-w-7xl tracking-wider whitespace-pre-line"
         >
           {{ daybyday.description }}
         </p>
       </div>
       <p
-        class="line line--mid tracking-wider"
+        class="line line--mid tracking-wider text-gilead-primary"
         [ngClass]="{ hidden: last }"
         data-v-19f81089=""
       >
@@ -312,12 +318,12 @@
       itinerary.
     </p>
   </div>
-  <div class="grid sm:grid-cols-3 grid-cols-2 mt-8 gap-5">
+  <div class="grid sm:grid-cols-5 grid-cols-2 mt-8 gap-5">
     <div
       *ngFor="let activity of itineraryactivity"
-      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 border border-gilead-primary rounded-md"
+      class="px-10 py-4 max-w-sm mx-auto flex items-center space-x-4 bg-gilead-primary shadow"
     >
-      <div class="text-xl font-semibold tracking-widest text-gilead-primary">
+      <div class="text-xl font-semibold tracking-widest text-white max-w-5xl">
         {{ activity.name }}
       </div>
     </div>

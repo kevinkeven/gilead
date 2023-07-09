@@ -1,0 +1,276 @@
+<section class="bg-zinc-800 mx-auto p-5 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div class="flex items-start justify-between sm:mx-auto gap-5">
+    <a href="/" class="flex items-center">
+      <img
+        src="/assets/gilead_black.svg"
+        class="h-12 mr-3"
+        alt="Gilead Summit Holidays Logo"
+        class="w-36"
+      />
+    </a>
+    <div class="flex gap-x-5 self-center">
+      <a href="" class="text-zinc-300 capitalize tracking-wider text-base">
+        <i class="bi bi-caret-left-fill clear-left text-gilead-primary"></i>
+        back to Gilead summit holidays</a
+      >
+      <a
+        class="text-gilead-primary cursor-pointer flex gap-3 uppercase"
+        href="tel:+256772072909"
+      >
+        <i class="bi bi-telephone-fill"></i>
+        Call Us now ?
+      </a>
+    </div>
+  </div>
+</section>
+<!-- WHY TRAVEL WITH GILDEAD -->
+<section class="bg-zinc-100 mx-auto px-5 py-32 space-y-16 w-screen">
+  <!-- Your Travel.Our expertise -->
+  <div
+    class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center"
+  >
+    <h1 class="sm:text-3xl text-gilead-primary mb-auto font-kaushan text-2xl">
+      Contact us
+    </h1>
+    <h1
+      class="uppercase text-zinc-800 tracking-widest text-[22px] font-bold sm:text-4xl"
+    >
+      Get in touch with experts
+    </h1>
+    <p
+      class="text-base sm:text-xl font-light leading-8 text-gray-400 max-w-5xl text-center"
+    >
+      Got questions? We're here to help! Contact our friendly team for any
+      inquiries or assistance regarding your dream vacation. We'll make sure
+      your travel experience is nothing short of extraordinary
+    </p>
+  </div>
+  <div class="flex flex-col items-center justify-center sm:mx-auto gap-5">
+    <div
+      class="bg-white p-20 sm:w-7/12 w-auto rounded-lg border border-gray-100"
+    >
+      <form [formGroup]="contactUs" (submit)="contactUsForm()">
+        <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+          <!-- first_name ? -->
+          <div class="w-full">
+            <label
+              for="firt_name"
+              class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >First Name ?</label
+            >
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              placeholder="e.g. John"
+              formControlName="first_name"
+              class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+              [ngClass]="{
+                'border-red-500':
+                  (first_name?.touched && first_name?.hasError('required')) ||
+                  first_name?.hasError('minlength')
+              }"
+              required=""
+            />
+            <ng-container *ngIf="first_name?.invalid && first_name?.touched">
+              <div class="py-3 text-red-500 tracking-wide">
+                <p class="capitalize" *ngIf="first_name?.hasError('required')">
+                  First name field can't be empty
+                </p>
+                <p class="capitalize" *ngIf="first_name?.hasError('min')">
+                  First name can't be less than 4 characters
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <!-- last_name ? -->
+          <div class="w-full">
+            <label
+              for="last_name"
+              class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >last name ?</label
+            >
+            <input
+              type="text"
+              placeholder="e.g Doe"
+              name="last_name"
+              id="last_name"
+              formControlName="last_name"
+              [ngClass]="{
+                'border-red-500':
+                  last_name?.touched && last_name?.hasError('required')
+              }"
+              class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+              required=""
+            />
+            <ng-container *ngIf="last_name?.invalid && last_name?.touched">
+              <div class="py-3 text-red-500 tracking-wide">
+                <p class="capitalize" *ngIf="last_name?.hasError('required')">
+                  last name field can't be empty
+                </p>
+                <p class="capitalize" *ngIf="last_name?.hasError('min')">
+                  last name can't be less than 4 characters
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <!-- Email -->
+          <div class="sm:col-span-2">
+            <label
+              for="email"
+              class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >Email Address</label
+            >
+            <input
+              [ngClass]="{
+                'border-red-500':
+                  (email?.touched && email?.hasError('required')) ||
+                  email?.hasError('email')
+              }"
+              type="email"
+              name="email"
+              placeholder="e.g Johndoe@example.com"
+              id="email"
+              formControlName="email"
+              class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+              required=""
+            />
+            <ng-container *ngIf="email?.invalid && email?.touched">
+              <div class="py-3 text-red-500 tracking-wide">
+                <p class="capitalize" *ngIf="email?.hasError('required')">
+                  email field can't be empty
+                </p>
+                <p class="capitalize" *ngIf="email?.hasError('email')">
+                  Email not valid
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <!-- phone_number ? -->
+
+          <div class="sm:col-span-2">
+            <label
+              for="phone_number "
+              class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >phone number ?</label
+            >
+            <input
+              type="text"
+              name="phone_number"
+              id="phone_number"
+              placeholder="e.g +256 000 000 0000"
+              formControlName="phone_number"
+              [ngClass]="{
+                'border-red-500':
+                  (phone_number?.touched &&
+                    phone_number?.hasError('required')) ||
+                  phone_number?.hasError('pattern')
+              }"
+              class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+              step="1"
+              required=""
+            />
+            <ng-container
+              *ngIf="phone_number?.invalid && phone_number?.touched"
+            >
+              <div class="py-3 text-red-500 tracking-wide">
+                <p
+                  class="capitalize"
+                  *ngIf="phone_number?.hasError('required')"
+                >
+                  phone number field can't be empty
+                </p>
+                <p class="capitalize" *ngIf="phone_number?.hasError('pattern')">
+                  Invalid Phone Number format.
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <!-- Country -->
+          <div class="sm:col-span-2">
+            <label
+              for="country "
+              class="block uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >Country ?</label
+            >
+            <select
+              [ngClass]="{
+            'border-red-500':
+              country?.touched && country?.hasError('required'),
+          }"
+              id="category"
+              formControlName="country"
+              class="bg-zinc-100 border text-gray-900 text-sm focus:border-gilead-primary block w-full p-3.5"
+            >
+              <option selected>Select category</option>
+              <option
+                *ngFor="let country of countries"
+                [value]="country.name"
+                class="text-gray-800"
+              >
+                {{ country.name }}
+              </option>
+            </select>
+            <ng-container *ngIf="country?.invalid && country?.touched">
+              <div class="py-3 text-red-500 tracking-wide">
+                <p class="capitalize" *ngIf="country?.hasError('required')">
+                  country field can't be empty
+                </p>
+              </div>
+            </ng-container>
+          </div>
+          <!-- message -->
+          <div class="sm:col-span-2">
+            <label
+              for="message"
+              class="block after:content-['*'] after:ml-0.5 after:text-red-500 uppercase tracking-widest mb-2 sm:text-base text-sm font-semibold text-gray-900"
+              >Message</label
+            >
+            <textarea
+              [ngClass]="{
+                'border-red-500':
+                  (message?.touched && message?.hasError('required')) ||
+                  message?.hasError('message')
+              }"
+              id="description"
+              formControlName="message"
+              rows="8"
+              formControlName="special_request"
+              class="block p-2.5 w-full placeholder:capitalize text-sm text-gray-900 bg-zinc-100 border focus:ring-primary-500 focus:border-primary-500"
+              placeholder="Your message...."
+            ></textarea>
+            <ng-container *ngIf="message?.invalid && message?.touched">
+              <div class="py-3 text-red-500 tracking-wide">
+                <p class="capitalize" *ngIf="message?.hasError('required')">
+                  message field can't be empty
+                </p>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <!-- Divider  -->
+        <div class="mt-6 py-5">
+          <div class="bg-zinc-200 h-1"></div>
+        </div>
+
+        <!-- next step Button -->
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button
+            [disabled]="contactUs.invalid"
+            type="submit"
+            class="py-3 px-6 uppercase disabled:cursor-not-allowed font-black disabled:bg-orange-200 space-x-2 bg-gilead-primary text-white transition-colors duration-300 ease-in-out"
+          >
+            <i
+              *ngIf="loading"
+              class="pi pi-spin pi-spinner text-white"
+              style="font-size: 1rem"
+            ></i>
+            <strong *ngIf="!loading">Get in touch</strong>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<p-toast position="bottom-center" key="bc"></p-toast>

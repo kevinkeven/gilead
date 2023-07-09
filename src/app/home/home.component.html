@@ -191,7 +191,7 @@
   </div>
 
   <div class="grid sm:grid-cols-4 grid-cols-1 first:ml-20 mt-20">
-    <ng-container *ngFor="let itinerary of itinerariese">
+    <ng-container *ngFor="let itinerary of itinerariese.slice(0, 8)">
       <app-itineraries-single
         [itinerarySlug]="itinerary.slug"
         [itineraryImage]="itinerary.image"

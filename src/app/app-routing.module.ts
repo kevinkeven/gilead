@@ -36,6 +36,12 @@ const routes: Routes = [
       import('./enquire/enquire.module').then((m) => m.EnquireModule),
   },
   {
+    path: 'contact-us',
+    loadChildren: () =>
+      import('./contact-us/contact-us.module').then((m) => m.ContactUsModule),
+  },
+
+  {
     path: 'blog',
     loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
   },
