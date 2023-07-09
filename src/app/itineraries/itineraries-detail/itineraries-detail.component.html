@@ -54,7 +54,9 @@
       Best time to go
     </h1>
 
-    <ul class="flex justify-center sm:text-base text-sm items-baseline gap-5">
+    <ul
+      class="sm:flex grid grid-cols-4 justify-center sm:text-base text-sm items-baseline gap-5"
+    >
       <li
         [ngClass]="{
           'border-green-300': month.when_to_visit === 'BEST',
