@@ -19,6 +19,7 @@ export class HomeComponent {
   Destination: any;
   itinerariese: any;
   blogPosts: any;
+  responsiveOptions: any;
 
   book_withus_images = [
     {
@@ -43,29 +44,28 @@ export class HomeComponent {
     },
   ];
 
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1500px',
-      numVisible: 5,
-    },
-    {
-      breakpoint: '1024px',
-      numVisible: 3,
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 2,
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1,
-    },
-  ];
-
   ngOnInit() {
     this.destination();
     this.Itineraries();
     this.getposts();
+
+    this.responsiveOptions = [
+      {
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '991px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
   }
   destination() {
     this.destinationService.getDestinations().subscribe({
