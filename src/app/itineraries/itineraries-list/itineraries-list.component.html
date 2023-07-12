@@ -25,28 +25,48 @@
       milestone celebration, or just a much-needed getaway.
     </p>
   </div>
-  <!-- <div
+  <div
     class="flex flex-col items-center justify-center sm:mx-auto gap-5 text-center bg-zinz-50"
   >
-    <div class="flex items-center space-x-4">
-      <label for="destination" class="text-gray-700">Destination:</label>
-      <select id="destination" name="destination" class="form-select w-48">
-        <option value="">All</option>
-        <option value="paris">Paris</option>
-        <option value="london">London</option>
-        <option value="new-york">New York</option>
-        <option value="tokyo">Tokyo</option>
-      </select>
-      <button
-        class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
+    <div>
+      <form
+        action=""
+        class="flex items-center space-x-4"
+        [formGroup]="filterForm"
+        (submit)="filterByCountry()"
       >
-        Filter
-      </button>
+        <label
+          for="destination"
+          class="text-gray-700 uppercase tracking-wider font-bold"
+          >Filter by:</label
+        >
+        <select
+          id="destination"
+          formControlName="country"
+          name="destination"
+          class="bg-zinc-100 border text-gray-700 uppercase tracking-wider font-bold focus:border-gilead-primary block w-96 p-3.5"
+        >
+          <option value="0" class="uppercase font-bold py-8">All</option>
+          <option
+            *ngFor="let country of Countries"
+            [value]="country.id"
+            class="uppercase font-bold py-8"
+          >
+            {{ country.name }}
+          </option>
+        </select>
+        <button
+          type="submit"
+          class="text-gray-50 font-bold uppercase bg-gilead-primary hover:bg-orange-300 focus:ring-4 focus:outline-none focus:ring-blue-300 py-3.5 px-10 text-center"
+        >
+          Filter
+        </button>
+      </form>
     </div>
-  </div> -->
+  </div>
 
   <div class="grid sm:grid-cols-4 grid-cols-1 first:ml-20 mt-20">
-    <ng-container *ngFor="let itinerary of Itineraries">
+    <ng-container *ngFor="let itinerary of filteredItineraries">
       <app-itineraries-single
         [itinerarySlug]="itinerary.slug"
         [itineraryImage]="itinerary.image"

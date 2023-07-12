@@ -1,5 +1,7 @@
+import { SharedService } from './../../shared/shared.service';
 import { Component } from '@angular/core';
 import { ItinerariesService } from '../itineraries.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-itineraries-list',
@@ -17,12 +19,31 @@ export class ItinerariesListComponent {
   }
 
   Itineraries: any;
-  constructor(private itinerariesService: ItinerariesService) {}
+  filteredItineraries: any;
+  Countries: any;
+
+  filterForm = new FormGroup({
+    country: new FormControl(),
+  });
+
+  constructor(
+    private itinerariesService: ItinerariesService,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit() {
     this.itinerariesService.getItineraries().subscribe({
       next: (result) => {
         this.Itineraries = result;
+        this.filteredItineraries = this.Itineraries;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+    this.sharedService.Countries().subscribe({
+      next: (result) => {
+        this.Countries = result;
       },
       error: (err) => {
         console.log(err);
@@ -62,5 +83,16 @@ export class ItinerariesListComponent {
 
   showMegaMenu() {
     this.ToggleMegamenu = !true;
+  }
+
+  filterByCountry() {
+    if (Number(this.filterForm.controls.country.value) != 0) {
+      this.filteredItineraries = this.Itineraries.filter(
+        (item: any) =>
+          item.country === Number(this.filterForm.controls.country.value)
+      );
+    } else {
+      this.filteredItineraries = this.Itineraries;
+    }
   }
 }

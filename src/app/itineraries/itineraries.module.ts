@@ -12,6 +12,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { TimelineModule } from 'primeng/timeline';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { PaginatorModule } from 'primeng/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { PaginatorModule } from 'primeng/paginator';
     TimelineModule,
     MegaMenuModule,
     PaginatorModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [ItinerariesSingleComponent],
 })
